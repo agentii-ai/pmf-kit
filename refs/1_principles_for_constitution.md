@@ -2,11 +2,11 @@
 > **Version:** v0.1.0  
 > **Last Updated (NYC):** 2025-12-03 04:34
 
-# step 1: principles of pmf
+# Step 1: Principles of PMF
 
+Based on step 0, you now have enough keywords, examples, and case references from [0_overview.md] to go deeper. Use this file to design a new perplexity.ai search prompt (or similar agentic search) that focuses specifically on **principles and patterns** behind successful pmf for ai/llm saas and agent products.
 
-
-based on the step 0, there are quite enought keyworks, case references from the 0_overview.md, use this file to build a new perplexity.ai search prompt with cursor, windsurf or ...
+The goal of this step is not to collect more raw examples, but to distill **clear, reusable principles** you can treat as a “pmf constitution” for this kit and future variants.
 
 ```prompt
 You are an expert product strategist and AI SaaS operator working in 2024–2025.
@@ -68,6 +68,7 @@ Output format:
 Make sure your answer is grounded in **recent (2024–2025) sources**, cite key references inline or as links, and avoid generic startup advice.
 
 ```
+
 # Principles of Product-Market Fit (PMF) for AI SaaS Products
 
 ## What PMF Means for AI SaaS Now (2024–2025)

@@ -2,10 +2,9 @@
 > **Version:** v0.1.0  
 > **Last Updated (NYC):** 2025-12-03 04:34
 
-# step 5: more references
+# Step 5: More references
 
+You can add additional references here at any time. Markdown and other text-based formats are preferred.
 
-you can always put more references here, markdown and other text based references are preferred.
-
-however, the references can be multiple modal.
+However, this section can also include multi‑modal references (for example, images, slide decks, or interactive demos).
 

@@ -2,7 +2,7 @@
 > **Version:** v0.1.0  
 > **Last Updated (NYC):** 2025-12-03 04:34
 
-# step 3: project management for planning
+# Step 3: Planning from project management
 
 This step corresponds to the **plan.md / `/speckit.plan`** phase in Spec Kit, but focused on **PMF for an AI/LLM SaaS product**, not on implementation or technology.
 
