@@ -1,30 +1,28 @@
+> **Author:** frank@agentii.ai  
+> **Version:** v0.1.0  
+> **Last Updated (NYC):** 2025-12-03 04:34
+
 # Step 0: Overview of PMF
 
-the knowledge of llm is limited at training time. to get the most recent best practices, we need to search with perplexity.ai or other agentic search tools.
+Large language models have fixed training cutoffs, so they often miss the most recent practices, data, and examples. to keep this kit current, always combine the static content in this repo with fresh research using perplexity.ai or other agentic search tools.
 
-provide best practices from top successful ai/llm-based agent products and suggest recent one or two years to make sure the information is up to date.
+For step 0, your goal is to collect and summarize **recent best practices** from leading ai/llm-based agent products. focus on examples from roughly the last 1–2 years so the patterns you capture reflect the current state of the market.
 
-you may search multiple times, just add the search results to this overview.md. read and edit , remove the bad information you don't like.
+You can run multiple searches over time and continue appending or refining the content in this overview.md. keep the strongest material, remove weak or outdated information, and treat this document as a living overview of modern pmf patterns for ai saas products.
 
 ```prompt_template
-
-
 extensively search about [topic]. looking for the best practices from top successful [well-known examples]
 
 write an overview.md about the background and principles of pmf , planning and tasking for a successful [topic]. based on the most recent [time] best practices.
 ```
 
-
 ```prompt
-
 extensively search about product market fit (pmf) for ai saas products. focus on the best practices and patterns from successful ai/llm-based agent products like cursor, devin, manus, claude code, heygen, genspark, pika, runway, harvey (law ai), descript, lovable.dev, and also famous products with strong pmf like canva, figma, notion, writer.ai, photoroom.
 
 write an overview.md that summarizes the background and principles of pmf for ai saas products, including planning and tasking, based on the most recent information from roughly 2023–2025, so the examples and data are up to date.
-
 ```
 
 ---
-
 
 # Principles of Product-Market Fit (PMF) for AI/LLM SaaS Products  
 _Overview for overview.md (2024–2025 best practices)_
@@ -410,7 +408,6 @@ Focusing narrowly on a high‑value workflow, building AI‑native experiences, 
 [20](https://writer.com/guides/evaluating-generative-ai/)
 
 ---
-
 
 Below is a distilled “playbook” of how top AI / LLM-native products and iconic SaaS tools actually get to strong product-market fit (PMF), with concrete patterns you can apply to your own AI SaaS / agent product.
 
