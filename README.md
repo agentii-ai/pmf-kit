@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./media/logo_large.webp" alt="PMF Kit Logo" width="200" height="200"/>
+    <img src="./media/logo.png" alt="PMF Kit Logo" width="200" height="200"/>
     <h1>🎯 PMF Kit</h1>
     <h3><em>Discover and validate product-market-fit faster with AI agents.</em></h3>
 </div>
