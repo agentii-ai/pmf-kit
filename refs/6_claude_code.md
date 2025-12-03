@@ -41,7 +41,7 @@ there are a few important constraints:
 think carefully and globally about architecture, naming, and multi-kit coexistence first, then draft a clear, opinionated spec.md for pmf-kit that is consistent with @memory/constitution.md and suitable as a reference for future *-kit variants.
 
 IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
-
+REMEMBER to edit the package names in pyproject.toml file.
 ```
 
 
@@ -67,6 +67,7 @@ think carefully and globally about architecture, naming, and multi-kit coexisten
 - can guide edits to the spec-kit templates in @templates/ and @templates/commands/ to swap `pmfkit` → `pmfkit` **without** changing the underlying infrastructure.
 
 IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+REMEMBER to edit the package names in pyproject.toml file.
 
 ```
 
@@ -94,6 +95,7 @@ think carefully and globally about architecture, naming, and multi-kit coexisten
 - can guide edits to the spec-kit templates in @templates/ and @templates/commands/ to swap `pmfkit` → `pmfkit` **without** changing the underlying infrastructure. continue writing tasks.md in the current git branch.
 
 IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+REMEMBER to edit the package names in pyproject.toml file.
 
 ```
 
@@ -117,6 +119,8 @@ think carefully and globally about architecture, naming, and multi-kit coexisten
 - keeping all edits in the current git branch as you complete the implementation.
 
 IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+REMEMBER to edit the package names in pyproject.toml file.
+
 ```
 
 
