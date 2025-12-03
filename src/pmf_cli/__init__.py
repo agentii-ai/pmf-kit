@@ -652,6 +652,22 @@ def download_template_from_github(ai_assistant: str, download_dir: Path, *, scri
             headers=_github_auth_headers(github_token),
         )
         status = response.status_code
+
+        # If pmf-kit has no releases yet (404), fall back to spec-kit templates
+        if status == 404:
+            if verbose:
+                console.print("[yellow]PMF-Kit releases not found, falling back to Spec-Kit templates...[/yellow]")
+            repo_owner = "github"
+            repo_name = "spec-kit"
+            api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/releases/latest"
+            response = client.get(
+                api_url,
+                timeout=30,
+                follow_redirects=True,
+                headers=_github_auth_headers(github_token),
+            )
+            status = response.status_code
+
         if status != 200:
             # Format detailed error message with rate-limit info
             error_msg = _format_rate_limit_error(status, response.headers, api_url)
@@ -1310,10 +1326,10 @@ def version():
     repo_owner = "agentii-ai"
     repo_name = "pmf-kit"
     api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/releases/latest"
-    
+
     template_version = "unknown"
     release_date = "unknown"
-    
+
     try:
         response = client.get(
             api_url,
@@ -1321,6 +1337,17 @@ def version():
             follow_redirects=True,
             headers=_github_auth_headers(),
         )
+        # Fall back to spec-kit if pmf-kit has no releases
+        if response.status_code == 404:
+            repo_owner = "github"
+            repo_name = "spec-kit"
+            api_url = f"https://api.github.com/repos/{repo_owner}/{repo_name}/releases/latest"
+            response = client.get(
+                api_url,
+                timeout=10,
+                follow_redirects=True,
+                headers=_github_auth_headers(),
+            )
         if response.status_code == 200:
             release_data = response.json()
             template_version = release_data.get("tag_name", "unknown")
