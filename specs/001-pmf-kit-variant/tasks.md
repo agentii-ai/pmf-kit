@@ -403,7 +403,7 @@
 
 ### Specification Template
 
-- [ ] T301 Adapt `templates/spec-template.md` - transform for PMF discovery specs
+- [x] T301 Adapt `templates/spec-template.md` - transform for PMF discovery specs
   - File: `templates/spec-template.md`
   - Changes:
     - Replace software "User Scenarios & Testing" with PMF "Personas & Segments"
@@ -419,7 +419,7 @@
 
 ### Plan Template
 
-- [ ] T302 Adapt `templates/plan-template.md` - transform for PMF research planning
+- [x] T302 Adapt `templates/plan-template.md` - transform for PMF research planning
   - File: `templates/plan-template.md`
   - Changes:
     - Replace "Technical Context" with "Research Context" (methods, evidence collection, analysis)
@@ -436,7 +436,7 @@
 
 ### Tasks Template
 
-- [ ] T303 Adapt `templates/tasks-template.md` - transform for PMF research execution
+- [x] T303 Adapt `templates/tasks-template.md` - transform for PMF research execution
   - File: `templates/tasks-template.md`
   - Changes:
     - Replace Phase 1/2 "Setup" and "Foundational" with research prep tasks
@@ -454,7 +454,7 @@
 
 ### Checklist Template
 
-- [ ] T304 Adapt `templates/checklist-template.md` - transform for PMF quality validation
+- [x] T304 Adapt `templates/checklist-template.md` - transform for PMF quality validation
   - File: `templates/checklist-template.md`
   - Changes:
     - Replace code quality criteria with PMF quality criteria
@@ -467,7 +467,7 @@
 
 ### CLAUDE-Template
 
-- [ ] T305 Update `templates/CLAUDE-template.md` - replace speckit with pmfkit references
+- [x] T305 Update `templates/CLAUDE-template.md` - replace speckit with pmfkit references
   - File: `templates/CLAUDE-template.md`
   - Changes:
     - Replace references to /speckit.* with /pmfkit.*
@@ -477,7 +477,7 @@
 
 ### Phase 4 Validation
 
-- [ ] T306 Generate test PMF specification using adapted template
+- [x] T306 Generate test PMF specification using adapted template
   - File: (temporary test spec.md)
   - Test: Create sample PMF spec using T301 template to verify output quality
   - Validation:
@@ -487,7 +487,7 @@
     - Contains hero workflows with TTFW targets and guardrails
   - Deliverable: Sample spec with validation notes
 
-- [ ] T307 Generate test PMF plan using adapted template
+- [x] T307 Generate test PMF plan using adapted template
   - File: (temporary test plan.md)
   - Test: Create sample PMF plan using T302 template
   - Validation:
@@ -497,7 +497,7 @@
     - Defines validation checkpoints
   - Deliverable: Sample plan with validation notes
 
-- [ ] T308 Generate test PMF tasks using adapted template
+- [x] T308 Generate test PMF tasks using adapted template
   - File: (temporary test tasks.md)
   - Test: Create sample PMF tasks using T303 template
   - Validation:
@@ -507,14 +507,14 @@
     - Organized by learning objective, not user story
   - Deliverable: Sample tasks with validation notes
 
-- [ ] T309 Verify templates produce PMF artifacts (not software development artifacts)
+- [x] T309 Verify templates produce PMF artifacts (not software development artifacts)
   - File: (automated content scan)
   - Test: Scan generated artifacts from T306-T308 for technical terms
   - Command: Check for terms like "Python", "database", "API", "endpoint", "REST"
   - Validation: Zero matches found in any generated artifact
   - Deliverable: Scan results report
 
-- [ ] T310 Commit Phase 4 changes to git
+- [x] T310 Commit Phase 4 changes to git
   - File: (git commit)
   - Command: `git add -A && git commit -m "Phase 4: Template content transformation - Category B1 heavy adaptation to PMF focus"`
   - Deliverable: Clean git history checkpoint
