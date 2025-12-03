@@ -67,144 +67,144 @@
 
 ### Agent Command Files (.claude/commands/)
 
-- [ ] T101 [P] Transform `.claude/commands/constitution.md` - replace speckit with pmfkit
+- [x] T101 [P] Transform `.claude/commands/constitution.md` - replace speckit with pmfkit
   - File: `.claude/commands/constitution.md`
   - Changes: Replace `speckit.specify` with `pmfkit.specify` in handoff
   - Validation: `grep speckit .claude/commands/constitution.md` returns zero
 
-- [ ] T102 [P] Transform `.claude/commands/specify.md` - replace speckit with pmfkit
+- [x] T102 [P] Transform `.claude/commands/specify.md` - replace speckit with pmfkit
   - File: `.claude/commands/specify.md`
   - Changes: Replace all `speckit.` references with `pmfkit.` in handoffs and content
   - Validation: `grep speckit .claude/commands/specify.md` returns zero
 
-- [ ] T103 [P] Transform `.claude/commands/clarify.md` - replace speckit with pmfkit
+- [x] T103 [P] Transform `.claude/commands/clarify.md` - replace speckit with pmfkit
   - File: `.claude/commands/clarify.md`
   - Changes: Replace `/speckit.` with `/pmfkit.` in handoffs, notes, and examples
   - Validation: `grep speckit .claude/commands/clarify.md` returns zero
 
-- [ ] T104 [P] Transform `.claude/commands/plan.md` - replace speckit with pmfkit
+- [x] T104 [P] Transform `.claude/commands/plan.md` - replace speckit with pmfkit
   - File: `.claude/commands/plan.md`
   - Changes: Replace `speckit.tasks`, `speckit.checklist`, and other references with `pmfkit.*`
   - Validation: `grep speckit .claude/commands/plan.md` returns zero
 
-- [ ] T105 [P] Transform `.claude/commands/tasks.md` - replace speckit with pmfkit
+- [x] T105 [P] Transform `.claude/commands/tasks.md` - replace speckit with pmfkit
   - File: `.claude/commands/tasks.md`
   - Changes: Replace `speckit.analyze`, `speckit.implement` with `pmfkit.*`
   - Validation: `grep speckit .claude/commands/tasks.md` returns zero
 
-- [ ] T106 [P] Transform `.claude/commands/implement.md` - replace speckit with pmfkit
+- [x] T106 [P] Transform `.claude/commands/implement.md` - replace speckit with pmfkit
   - File: `.claude/commands/implement.md`
   - Changes: Replace `/speckit.tasks`, `/speckit.implement` references with `/pmfkit.*`
   - Validation: `grep speckit .claude/commands/implement.md` returns zero
 
-- [ ] T107 [P] Transform `.claude/commands/analyze.md` - replace speckit with pmfkit
+- [x] T107 [P] Transform `.claude/commands/analyze.md` - replace speckit with pmfkit
   - File: `.claude/commands/analyze.md`
   - Changes: Replace `/speckit.analyze`, `/speckit.tasks`, `/speckit.implement` with `/pmfkit.*`
   - Validation: `grep speckit .claude/commands/analyze.md` returns zero
 
-- [ ] T108 [P] Transform `.claude/commands/checklist.md` - replace speckit with pmfkit
+- [x] T108 [P] Transform `.claude/commands/checklist.md` - replace speckit with pmfkit
   - File: `.claude/commands/checklist.md`
   - Changes: Replace `/speckit.checklist` and embedded references with `/pmfkit.checklist`
   - Validation: `grep speckit .claude/commands/checklist.md` returns zero
 
-- [ ] T109 [P] Transform `.claude/commands/taskstoissues.md` - replace speckit with pmfkit
+- [x] T109 [P] Transform `.claude/commands/taskstoissues.md` - replace speckit with pmfkit
   - File: `.claude/commands/taskstoissues.md`
   - Changes: Replace `/speckit.taskstoissues` with `/pmfkit.taskstoissues`
   - Validation: `grep speckit .claude/commands/taskstoissues.md` returns zero
 
 ### Template Command Files (templates/commands/)
 
-- [ ] T110 [P] Transform `templates/commands/constitution.md` - replace speckit with pmfkit
+- [x] T110 [P] Transform `templates/commands/constitution.md` - replace speckit with pmfkit
   - File: `templates/commands/constitution.md`
   - Changes: Same as T101 (parallel transformation)
   - Validation: `grep speckit templates/commands/constitution.md` returns zero
 
-- [ ] T111 [P] Transform `templates/commands/specify.md` - replace speckit with pmfkit
+- [x] T111 [P] Transform `templates/commands/specify.md` - replace speckit with pmfkit
   - File: `templates/commands/specify.md`
   - Changes: Same as T102 (parallel transformation)
   - Validation: `grep speckit templates/commands/specify.md` returns zero
 
-- [ ] T112 [P] Transform `templates/commands/clarify.md` - replace speckit with pmfkit
+- [x] T112 [P] Transform `templates/commands/clarify.md` - replace speckit with pmfkit
   - File: `templates/commands/clarify.md`
   - Changes: Same as T103 (parallel transformation)
   - Validation: `grep speckit templates/commands/clarify.md` returns zero
 
-- [ ] T113 [P] Transform `templates/commands/plan.md` - replace speckit with pmfkit
+- [x] T113 [P] Transform `templates/commands/plan.md` - replace speckit with pmfkit
   - File: `templates/commands/plan.md`
   - Changes: Same as T104 (parallel transformation)
   - Validation: `grep speckit templates/commands/plan.md` returns zero
 
-- [ ] T114 [P] Transform `templates/commands/tasks.md` - replace speckit with pmfkit
+- [x] T114 [P] Transform `templates/commands/tasks.md` - replace speckit with pmfkit
   - File: `templates/commands/tasks.md`
   - Changes: Same as T105 (parallel transformation)
   - Validation: `grep speckit templates/commands/tasks.md` returns zero
 
-- [ ] T115 [P] Transform `templates/commands/implement.md` - replace speckit with pmfkit
+- [x] T115 [P] Transform `templates/commands/implement.md` - replace speckit with pmfkit
   - File: `templates/commands/implement.md`
   - Changes: Same as T106 (parallel transformation)
   - Validation: `grep speckit templates/commands/implement.md` returns zero
 
-- [ ] T116 [P] Transform `templates/commands/analyze.md` - replace speckit with pmfkit
+- [x] T116 [P] Transform `templates/commands/analyze.md` - replace speckit with pmfkit
   - File: `templates/commands/analyze.md`
   - Changes: Same as T107 (parallel transformation)
   - Validation: `grep speckit templates/commands/analyze.md` returns zero
 
-- [ ] T117 [P] Transform `templates/commands/checklist.md` - replace speckit with pmfkit
+- [x] T117 [P] Transform `templates/commands/checklist.md` - replace speckit with pmfkit
   - File: `templates/commands/checklist.md`
   - Changes: Same as T108 (parallel transformation)
   - Validation: `grep speckit templates/commands/checklist.md` returns zero
 
-- [ ] T118 [P] Transform `templates/commands/taskstoissues.md` - replace speckit with pmfkit
+- [x] T118 [P] Transform `templates/commands/taskstoissues.md` - replace speckit with pmfkit
   - File: `templates/commands/taskstoissues.md`
   - Changes: Same as T109 (parallel transformation)
   - Validation: `grep speckit templates/commands/taskstoissues.md` returns zero
 
 ### Supporting Template Files
 
-- [ ] T119 [P] Transform `templates/agent-file-template.md` - replace speckit references
+- [x] T119 [P] Transform `templates/agent-file-template.md` - replace speckit references
   - File: `templates/agent-file-template.md`
   - Changes: Replace `speckit` with `pmfkit` in command prefix examples
   - Validation: `grep speckit templates/agent-file-template.md` returns zero
 
-- [ ] T120 [P] Update `templates/vscode-settings.json` - check for speckit references
+- [x] T120 [P] Update `templates/vscode-settings.json` - check for speckit references
   - File: `templates/vscode-settings.json`
   - Changes: Replace any hardcoded speckit references with pmfkit
   - Validation: `grep speckit templates/vscode-settings.json` returns zero
 
 ### Script Files
 
-- [ ] T121 Transform `scripts/bash/common.sh` - replace speckit references in shared functions
+- [x] T121 Transform `scripts/bash/common.sh` - replace speckit references in shared functions
   - File: `scripts/bash/common.sh`
   - Changes: Replace speckit in variable names, comments, and function references
   - Validation: `grep speckit scripts/bash/common.sh` returns zero
   - Dependency: Completes before script-dependent tasks
 
-- [ ] T122 Transform `scripts/bash/create-new-feature.sh` - replace speckit in help text
+- [x] T122 Transform `scripts/bash/create-new-feature.sh` - replace speckit in help text
   - File: `scripts/bash/create-new-feature.sh`
   - Changes: Replace speckit with pmfkit in help text, examples, template paths
   - Validation: `grep speckit scripts/bash/create-new-feature.sh` returns zero
   - Dependency: T121
 
-- [ ] T123 Transform `scripts/bash/setup-plan.sh` - replace speckit in template references
+- [x] T123 Transform `scripts/bash/setup-plan.sh` - replace speckit in template references
   - File: `scripts/bash/setup-plan.sh`
   - Changes: Replace speckit in template paths and references
   - Validation: `grep speckit scripts/bash/setup-plan.sh` returns zero
   - Dependency: T121
 
-- [ ] T124 [P] Transform `scripts/bash/update-*-md.sh` - replace speckit in agent scripts
+- [x] T124 [P] Transform `scripts/bash/update-*-md.sh` - replace speckit in agent scripts
   - File: `scripts/bash/update-*.sh` (all agent-specific scripts)
   - Changes: Replace speckit references in all update scripts
   - Validation: `grep speckit scripts/bash/update-*.sh` returns zero
 
 ### Phase 2 Validation
 
-- [ ] T125 Run namespace validation script after Phase 2 completion
+- [x] T125 Run namespace validation script after Phase 2 completion
   - File: `scripts/validate-namespace.sh`
   - Command: Execute validation script to confirm zero speckit instances
   - Deliverable: Validation report showing pass
   - Dependency: T101-T124 complete
 
-- [ ] T126 Commit Phase 2 changes to git
+- [x] T126 Commit Phase 2 changes to git
   - File: (git commit)
   - Command: `git add -A && git commit -m "Phase 2: Namespace isolation - Category A simple transformations"`
   - Deliverable: Clean git history checkpoint
@@ -223,7 +223,7 @@
 
 ### Constitution Command
 
-- [ ] T201 Adapt `.claude/commands/constitution.md` - update for PMF principles
+- [x] T201 Adapt `.claude/commands/constitution.md` - update for PMF principles
   - File: `.claude/commands/constitution.md`
   - Changes:
     - Update description to focus on PMF-specific principles
@@ -232,14 +232,14 @@
   - Content: Already has PMF principles in v1.0.0, minor refinements needed
   - Validation: Description mentions PMF principles, no technical terms
 
-- [ ] T202 Adapt `templates/commands/constitution.md` - same as T201
+- [x] T202 Adapt `templates/commands/constitution.md` - same as T201
   - File: `templates/commands/constitution.md`
   - Changes: Parallel transformation of template version
   - Dependency: T201
 
 ### Specify Command
 
-- [ ] T203 Adapt `.claude/commands/specify.md` - update workflow for PMF specs
+- [x] T203 Adapt `.claude/commands/specify.md` - update workflow for PMF specs
   - File: `.claude/commands/specify.md`
   - Changes:
     - Update prompt to guide creation of PMF specifications (personas, JTBD, hero workflows)
@@ -249,14 +249,14 @@
   - Content: Full workflow adaptation required (moderate complexity)
   - Validation: Generated spec examples show PMF sections, no code architecture
 
-- [ ] T204 Adapt `templates/commands/specify.md` - same as T203
+- [x] T204 Adapt `templates/commands/specify.md` - same as T203
   - File: `templates/commands/specify.md`
   - Changes: Parallel transformation of template version
   - Dependency: T203
 
 ### Clarify Command
 
-- [ ] T205 Adapt `.claude/commands/clarify.md` - update for PMF hypothesis clarification
+- [x] T205 Adapt `.claude/commands/clarify.md` - update for PMF hypothesis clarification
   - File: `.claude/commands/clarify.md`
   - Changes:
     - Update to clarify PMF hypotheses (not software requirements)
@@ -266,14 +266,14 @@
   - Content: Moderate workflow adaptation
   - Validation: Clarification questions focus on PMF unknowns
 
-- [ ] T206 Adapt `templates/commands/clarify.md` - same as T205
+- [x] T206 Adapt `templates/commands/clarify.md` - same as T205
   - File: `templates/commands/clarify.md`
   - Changes: Parallel transformation of template version
   - Dependency: T205
 
 ### Plan Command
 
-- [ ] T207 Adapt `.claude/commands/plan.md` - update for PMF research planning
+- [x] T207 Adapt `.claude/commands/plan.md` - update for PMF research planning
   - File: `.claude/commands/plan.md`
   - Changes:
     - Update workflow to guide PMF execution planning (not technical architecture)
@@ -283,14 +283,14 @@
   - Content: Heavy workflow adaptation (convert from technical to research focus)
   - Validation: Generated plan examples show research methods, no code stacks
 
-- [ ] T208 Adapt `templates/commands/plan.md` - same as T207
+- [x] T208 Adapt `templates/commands/plan.md` - same as T207
   - File: `templates/commands/plan.md`
   - Changes: Parallel transformation of template version
   - Dependency: T207
 
 ### Tasks Command
 
-- [ ] T209 Adapt `.claude/commands/tasks.md` - update for PMF task generation
+- [x] T209 Adapt `.claude/commands/tasks.md` - update for PMF task generation
   - File: `.claude/commands/tasks.md`
   - Changes:
     - Update workflow to generate PMF discovery tasks (not development tasks)
@@ -301,14 +301,14 @@
   - Content: Heavy workflow adaptation
   - Validation: Generated tasks reference research activities, not code development
 
-- [ ] T210 Adapt `templates/commands/tasks.md` - same as T209
+- [x] T210 Adapt `templates/commands/tasks.md` - same as T209
   - File: `templates/commands/tasks.md`
   - Changes: Parallel transformation of template version
   - Dependency: T209
 
 ### Implement Command
 
-- [ ] T211 Adapt `.claude/commands/implement.md` - update for PMF research execution
+- [x] T211 Adapt `.claude/commands/implement.md` - update for PMF research execution
   - File: `.claude/commands/implement.md`
   - Changes:
     - Update workflow description to focus on research execution (not code implementation)
@@ -318,14 +318,14 @@
   - Content: Moderate workflow adaptation
   - Validation: Execution pattern focuses on research evidence, not code commits
 
-- [ ] T212 Adapt `templates/commands/implement.md` - same as T211
+- [x] T212 Adapt `templates/commands/implement.md` - same as T211
   - File: `templates/commands/implement.md`
   - Changes: Parallel transformation of template version
   - Dependency: T211
 
 ### Analyze Command
 
-- [ ] T213 Adapt `.claude/commands/analyze.md` - update for PMF artifact analysis
+- [x] T213 Adapt `.claude/commands/analyze.md` - update for PMF artifact analysis
   - File: `.claude/commands/analyze.md`
   - Changes:
     - Update analysis focus to PMF consistency (not technical consistency)
@@ -336,14 +336,14 @@
   - Content: Moderate workflow adaptation
   - Validation: Analysis checks PMF-specific quality gates
 
-- [ ] T214 Adapt `templates/commands/analyze.md` - same as T213
+- [x] T214 Adapt `templates/commands/analyze.md` - same as T213
   - File: `templates/commands/analyze.md`
   - Changes: Parallel transformation of template version
   - Dependency: T213
 
 ### Checklist Command
 
-- [ ] T215 Adapt `.claude/commands/checklist.md` - update for PMF quality checklists
+- [x] T215 Adapt `.claude/commands/checklist.md` - update for PMF quality checklists
   - File: `.claude/commands/checklist.md`
   - Changes:
     - Update to generate PMF-specific quality checklists
@@ -353,14 +353,14 @@
   - Content: Moderate workflow adaptation
   - Validation: Generated checklists reference PMF concepts
 
-- [ ] T216 Adapt `templates/commands/checklist.md` - same as T215
+- [x] T216 Adapt `templates/commands/checklist.md` - same as T215
   - File: `templates/commands/checklist.md`
   - Changes: Parallel transformation of template version
   - Dependency: T215
 
 ### TasksToIssues Command
 
-- [ ] T217 Adapt `.claude/commands/taskstoissues.md` - update for PMF task conversion
+- [x] T217 Adapt `.claude/commands/taskstoissues.md` - update for PMF task conversion
   - File: `.claude/commands/taskstoissues.md`
   - Changes:
     - Update to convert PMF research tasks to GitHub issues
@@ -369,21 +369,21 @@
   - Content: Light workflow adaptation (mostly namespace changes)
   - Validation: Conversion creates research-focused issues
 
-- [ ] T218 Adapt `templates/commands/taskstoissues.md` - same as T217
+- [x] T218 Adapt `templates/commands/taskstoissues.md` - same as T217
   - File: `templates/commands/taskstoissues.md`
   - Changes: Parallel transformation of template version
   - Dependency: T217
 
 ### Phase 3 Validation
 
-- [ ] T219 Validate all command files for PMF workflow correctness
+- [x] T219 Validate all command files for PMF workflow correctness
   - File: (manual review)
   - Check: Each command description focuses on PMF (not code)
   - Check: All handoffs use `/pmfkit.*` prefix
   - Check: Examples reference PMF patterns (personas, workflows, evidence)
   - Deliverable: Review checklist completed
 
-- [ ] T220 Commit Phase 3 changes to git
+- [x] T220 Commit Phase 3 changes to git
   - File: (git commit)
   - Command: `git add -A && git commit -m "Phase 3: Command transformation - Category B2 moderate content adaptation"`
   - Deliverable: Clean git history checkpoint

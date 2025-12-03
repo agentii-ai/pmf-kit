@@ -1,13 +1,13 @@
 ---
-description: Create or update the feature specification from a natural language feature description.
-handoffs: 
-  - label: Build Technical Plan
-    agent: pmfkit.plan
-    prompt: Create a plan for the spec. I am building with...
-  - label: Clarify Spec Requirements
+description: Create a PMF (Product-Market-Fit) specification from a natural language product description, defining personas, JTBD, hero workflows, and success metrics for discovery validation.
+handoffs:
+  - label: Clarify PMF Spec
     agent: pmfkit.clarify
-    prompt: Clarify specification requirements
+    prompt: Clarify this PMF specification before planning
     send: true
+  - label: Create Research Plan
+    agent: pmfkit.plan
+    prompt: Create a research plan for this PMF spec. We're validating...
 scripts:
   sh: scripts/bash/create-new-feature.sh --json "{ARGS}"
   ps: scripts/powershell/create-new-feature.ps1 -Json "{ARGS}"
