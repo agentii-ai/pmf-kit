@@ -4,7 +4,7 @@
 
 # Step 2: Define critical information for your project
 
-This step corresponds to the **spec.md / `/speckit.specify`** phase in Spec Kit, but focused on **PMF for an AI/LLM SaaS product**, not on implementation or technology.
+This step corresponds to the **spec.md / `/pmfkit.specify`** phase in Spec Kit, but focused on **PMF for an AI/LLM SaaS product**, not on implementation or technology.
 
 At this stage, you should define:
 

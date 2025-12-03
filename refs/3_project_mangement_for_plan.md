@@ -4,7 +4,7 @@
 
 # Step 3: Planning from project management
 
-This step corresponds to the **plan.md / `/speckit.plan`** phase in Spec Kit, but focused on **PMF for an AI/LLM SaaS product**, not on implementation or technology.
+This step corresponds to the **plan.md / `/pmfkit.plan`** phase in Spec Kit, but focused on **PMF for an AI/LLM SaaS product**, not on implementation or technology.
 
 Based on **Step 0–2**, you already have:
 

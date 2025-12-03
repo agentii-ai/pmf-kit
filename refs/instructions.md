@@ -322,7 +322,7 @@ To create a new variant (e.g., `design-kit`, `marketing-kit`, `writing-kit`):
    - Step 4 (`tasks.md`): define how you break work down and assign ownership.
 
 5. **Wire it into your agent commands**
-   - Map commands like `/speckit.specify` → `/[yourkit].specify`.  
+   - Map commands like `/pmfkit.specify` → `/[yourkit].specify`.  
    - Make sure each command reads the right references from `refs/` and `memory/`.
 
 6. **Iterate using real projects**
