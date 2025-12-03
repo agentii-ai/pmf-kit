@@ -1,4 +1,4 @@
-# Step 1: Overview of PMF
+# Step 0: Overview of PMF
 
 the knowledge of llm is limited at training time. to get the most recent best practices, we need to search with perplexity.ai or other agentic search tools.
 
@@ -6,13 +6,20 @@ provide best practices from top successful ai/llm-based agent products and sugge
 
 you may search multiple times, just add the search results to this overview.md. read and edit , remove the bad information you don't like.
 
+```prompt_template
+
+
+extensively search about [topic]. looking for the best practices from top successful [well-known examples]
+
+write an overview.md about the background and principles of pmf , planning and tasking for a successful [topic]. based on the most recent [time] best practices.
+```
+
+
 ```prompt
 
+extensively search about product market fit (pmf) for ai saas products. focus on the best practices and patterns from successful ai/llm-based agent products like cursor, devin, manus, claude code, heygen, genspark, pika, runway, harvey (law ai), descript, lovable.dev, and also famous products with strong pmf like canva, figma, notion, writer.ai, photoroom.
 
-extensively search about product market fit (pmf) of ai saas products. looking for the best practices from top successful ai/llm-based agent products like cursor, devin, manus, claude code, heygen, genspark, pika, runway, harvey (law ai), descript, lovable.dev, et al. and also some famous products with great pmf like canva, figma, notion, writer.ai, photoroom
-
-write an overview.md about the principles of pmf , planning and tasking for a successful pmf. based on the most recent 2 years (2024, 2025) best practices.
-
+write an overview.md that summarizes the background and principles of pmf for ai saas products, including planning and tasking, based on the most recent information from roughly 2023–2025, so the examples and data are up to date.
 
 ```
 
@@ -793,3 +800,6 @@ a tailored PMF roadmap can be sketched that borrows specific patterns from the m
 [18](https://review.firstround.com/the-5-phases-of-figmas-community-led-growth-from-stealth-to-enterprise/)
 [19](https://www.notion.vc/resources/defining-product-market-fit)
 [20](https://www.youtube.com/watch?v=CsyR5EHXYQE)
+
+
+
