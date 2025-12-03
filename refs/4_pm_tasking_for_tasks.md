@@ -2,9 +2,9 @@
 > **Version:** v0.1.0  
 > **Last Updated (NYC):** 2025-12-03 04:34
 
-# step 4: tasking methodology
+# Step 4: Tasking methodology
 
-Step 4 corresponds to the **tasks.md / `/speckit.tasks`** phase in Spec Kit, but focused on **PMF for an AI/LLM SaaS product**, not on code implementation.
+Step 4 corresponds to the **tasks.md / `/pmfkit.tasks`** phase in Spec Kit, but focused on **PMF for an AI/LLM SaaS product**, not on code implementation.
 
 Where `plan.md` (Step 3) defines *strategy and plan* (objectives, wedge, channels, growth loops, experiments), this step turns that plan into an **executable task list**:
 

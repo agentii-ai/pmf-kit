@@ -1,9 +1,9 @@
 ---
-description: Identify underspecified areas in the current feature spec by asking up to 5 highly targeted clarification questions and encoding answers back into the spec.
-handoffs: 
-  - label: Build Technical Plan
-    agent: speckit.plan
-    prompt: Create a plan for the spec. I am building with...
+description: Identify gaps and ambiguities in your PMF specification, asking targeted questions about personas, hypotheses, success metrics, and hero workflows before committing to research planning.
+handoffs:
+  - label: Create Research Plan
+    agent: pmfkit.plan
+    prompt: Create a research plan for the spec. We're validating PMF for...
 scripts:
    sh: scripts/bash/check-prerequisites.sh --json --paths-only
    ps: scripts/powershell/check-prerequisites.ps1 -Json -PathsOnly
@@ -19,9 +19,9 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-Goal: Detect and reduce ambiguity or missing decision points in the active feature specification and record the clarifications directly in the spec file.
+Goal: Detect and reduce ambiguity in your PMF specification before committing to research planning. Focus on clarifying personas, hypotheses, success metrics, and hero workflows.
 
-Note: This clarification workflow is expected to run (and be completed) BEFORE invoking `/speckit.plan`. If the user explicitly states they are skipping clarification (e.g., exploratory spike), you may proceed, but must warn that downstream rework risk increases.
+Note: This clarification workflow should run BEFORE invoking `/pmfkit.plan`. If you skip clarification (e.g., exploratory phase), downstream rework risk increases.
 
 Execution steps:
 
@@ -29,60 +29,39 @@ Execution steps:
    - `FEATURE_DIR`
    - `FEATURE_SPEC`
    - (Optionally capture `IMPL_PLAN`, `TASKS` for future chained flows.)
-   - If JSON parsing fails, abort and instruct user to re-run `/speckit.specify` or verify feature branch environment.
+   - If JSON parsing fails, abort and instruct user to re-run `/pmfkit.specify` or verify feature branch environment.
    - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
 
 2. Load the current spec file. Perform a structured ambiguity & coverage scan using this taxonomy. For each category, mark status: Clear / Partial / Missing. Produce an internal coverage map used for prioritization (do not output raw map unless no questions will be asked).
 
-   Functional Scope & Behavior:
-   - Core user goals & success criteria
-   - Explicit out-of-scope declarations
-   - User roles / personas differentiation
+   Persona & Segment Definition:
+   - Target persona(s) clearly defined (role, company, tools, environment)
+   - Segment distinct from adjacent personas
+   - Persona pain intensity and frequency
 
-   Domain & Data Model:
-   - Entities, attributes, relationships
-   - Identity & uniqueness rules
-   - Lifecycle/state transitions
-   - Data volume / scale assumptions
+   Jobs-to-Be-Done (JTBD):
+   - Top 3 JTBD clearly articulated (functional, emotional, social)
+   - Current workarounds documented
+   - Job frequency and willingness-to-pay signals
 
-   Interaction & UX Flow:
-   - Critical user journeys / sequences
-   - Error/empty/loading states
-   - Accessibility or localization notes
+   Hero Workflow Specification:
+   - End-to-end hero workflow clear (input → process → output)
+   - TTFW (time-to-first-workflow) target defined
+   - Success signal obvious to user
 
-   Non-Functional Quality Attributes:
-   - Performance (latency, throughput targets)
-   - Scalability (horizontal/vertical, limits)
-   - Reliability & availability (uptime, recovery expectations)
-   - Observability (logging, metrics, tracing signals)
-   - Security & privacy (authN/Z, data protection, threat assumptions)
-   - Compliance / regulatory constraints (if any)
+   PMF Hypotheses & Success Metrics:
+   - Core hypothesis stated clearly
+   - Success metrics defined (activation, engagement, retention, AI-specific)
+   - Metrics tied to business value
 
-   Integration & External Dependencies:
-   - External services/APIs and failure modes
-   - Data import/export formats
-   - Protocol/versioning assumptions
+   Constraints & Risks:
+   - Technical feasibility acknowledged
+   - Competitive landscape identified
+   - Top 3 PMF risks and mitigations
 
-   Edge Cases & Failure Handling:
-   - Negative scenarios
-   - Rate limiting / throttling
-   - Conflict resolution (e.g., concurrent edits)
-
-   Constraints & Tradeoffs:
-   - Technical constraints (language, storage, hosting)
-   - Explicit tradeoffs or rejected alternatives
-
-   Terminology & Consistency:
-   - Canonical glossary terms
-   - Avoided synonyms / deprecated terms
-
-   Completion Signals:
-   - Acceptance criteria testability
-   - Measurable Definition of Done style indicators
-
-   Misc / Placeholders:
-   - TODO markers / unresolved decisions
-   - Ambiguous adjectives ("robust", "intuitive") lacking quantification
+   Distribution & Go-to-Market:
+   - Primary channel hypotheses
+   - Early adopter accessibility plan
 
    For each category with Partial or Missing status, add a candidate question opportunity unless:
    - Clarification would not materially change implementation or validation strategy
@@ -168,13 +147,13 @@ Execution steps:
    - Path to updated spec.
    - Sections touched (list names).
    - Coverage summary table listing each taxonomy category with Status: Resolved (was Partial/Missing and addressed), Deferred (exceeds question quota or better suited for planning), Clear (already sufficient), Outstanding (still Partial/Missing but low impact).
-   - If any Outstanding or Deferred remain, recommend whether to proceed to `/speckit.plan` or run `/speckit.clarify` again later post-plan.
+   - If any Outstanding or Deferred remain, recommend whether to proceed to `/pmfkit.plan` or run `/pmfkit.clarify` again later post-plan.
    - Suggested next command.
 
 Behavior rules:
 
 - If no meaningful ambiguities found (or all potential questions would be low-impact), respond: "No critical ambiguities detected worth formal clarification." and suggest proceeding.
-- If spec file missing, instruct user to run `/speckit.specify` first (do not create a new spec here).
+- If spec file missing, instruct user to run `/pmfkit.specify` first (do not create a new spec here).
 - Never exceed 5 total asked questions (clarification retries for a single question do not count as new questions).
 - Avoid speculative tech stack questions unless the absence blocks functional clarity.
 - Respect user early termination signals ("stop", "done", "proceed").

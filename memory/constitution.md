@@ -14,7 +14,7 @@ Templates Requiring Updates:
 - ⚠ /templates/plan-template.md - Needs PMF-specific constitution check gates
 - ⚠ /templates/spec-template.md - Needs PMF-specific user story guidelines
 - ⚠ /templates/tasks-template.md - Needs PMF-specific task categories
-- ⚠ /.claude/commands/*.md - Need renaming from speckit.* to pmfkit.*
+- ⚠ /.claude/commands/*.md - Need Keep old commands, this is the working commands for current spec-kit for coding agents
 - ⚠ CLI implementation - Needs "pmf" command instead of "specify"
 
 Follow-up TODOs:
@@ -129,7 +129,7 @@ in market.
 **Requirements**:
 - CLI command MUST be `pmf` (not `specify`)
 - Package name MUST be `pmf-cli` (not `specify-cli`)
-- Slash commands MUST use `pmfkit.*` prefix (not `speckit.*`)
+- Slash commands MUST use `pmfkit.*` prefix (not `pmfkit.*`)
 - Templates MUST reference correct command namespaces
 - Documentation MUST explain multi-kit installation strategy
 
@@ -144,14 +144,14 @@ pmf init <project>              # NOT: specify init
 pmf check                       # NOT: specify check
 
 # Agent commands
-/pmfkit.constitution           # NOT: /speckit.constitution
-/pmfkit.specify                # NOT: /speckit.specify
-/pmfkit.plan                   # NOT: /speckit.plan
-/pmfkit.tasks                  # NOT: /speckit.tasks
-/pmfkit.implement              # NOT: /speckit.implement
-/pmfkit.clarify                # NOT: /speckit.clarify
-/pmfkit.analyze                # NOT: /speckit.analyze
-/pmfkit.checklist              # NOT: /speckit.checklist
+/pmfkit.constitution           # NOT: /pmfkit.constitution
+/pmfkit.specify                # NOT: /pmfkit.specify
+/pmfkit.plan                   # NOT: /pmfkit.plan
+/pmfkit.tasks                  # NOT: /pmfkit.tasks
+/pmfkit.implement              # NOT: /pmfkit.implement
+/pmfkit.clarify                # NOT: /pmfkit.clarify
+/pmfkit.analyze                # NOT: /pmfkit.analyze
+/pmfkit.checklist              # NOT: /pmfkit.checklist
 ```
 
 ### VII. Template Extensibility

@@ -1,115 +1,255 @@
-# Feature Specification: [FEATURE NAME]
+# PMF Specification: [PRODUCT NAME]
 
-**Feature Branch**: `[###-feature-name]`  
-**Created**: [DATE]  
-**Status**: Draft  
-**Input**: User description: "$ARGUMENTS"
+**Feature Branch**: `[###-pmf-discovery]`
+**Created**: [DATE]
+**Status**: Draft
+**Discovery Focus**: [AI Product Category]
 
-## User Scenarios & Testing *(mandatory)*
+## Overview
 
-<!--
-  IMPORTANT: User stories should be PRIORITIZED as user journeys ordered by importance.
-  Each user story/journey must be INDEPENDENTLY TESTABLE - meaning if you implement just ONE of them,
-  you should still have a viable MVP (Minimum Viable Product) that delivers value.
-  
-  Assign priorities (P1, P2, P3, etc.) to each story, where P1 is the most critical.
-  Think of each story as a standalone slice of functionality that can be:
-  - Developed independently
-  - Tested independently
-  - Deployed independently
-  - Demonstrated to users independently
--->
+**What we believe**: [Core hypothesis about market need - 1-2 sentences]
 
-### User Story 1 - [Brief Title] (Priority: P1)
+**Who we're solving for**: [Primary persona(s) - brief]
 
-[Describe this user journey in plain language]
-
-**Why this priority**: [Explain the value and why it has this priority level]
-
-**Independent Test**: [Describe how this can be tested independently - e.g., "Can be fully tested by [specific action] and delivers [specific value]"]
-
-**Acceptance Scenarios**:
-
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
-2. **Given** [initial state], **When** [action], **Then** [expected outcome]
+**Why now**: [Market signal or trigger - 1-2 sentences]
 
 ---
 
-### User Story 2 - [Brief Title] (Priority: P2)
+## Personas & Segments *(mandatory)*
 
-[Describe this user journey in plain language]
+<!--
+  Focus on SHARP personas with role, company context, tools, and environment.
+  Go deep on 1-2 primary personas; sketch secondary personas as needed.
+  Include pain indicators and frequency of pain.
+-->
 
-**Why this priority**: [Explain the value and why it has this priority level]
+### Primary Persona: [Persona 1 - Role/Title]
 
-**Independent Test**: [Describe how this can be tested independently]
+**Context**:
+- **Role**: [Specific title/function]
+- **Company**: [Size, industry, stage] - e.g., "Mid-market B2B SaaS, Series A"
+- **Team**: [Who they collaborate with]
+- **Tools they use**: [Current toolchain]
+- **Success metric**: [What success looks like in their role]
 
-**Acceptance Scenarios**:
+**Pain Profile**:
+- **Top pain**: [Most acute problem frequency & impact]
+- **Current workaround**: [How they solve it today]
+- **Willingness to try**: [Signal of openness - why they're looking]
 
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
+### Secondary Persona: [Persona 2 - Role/Title]
+
+[Same structure as above]
+
+### Segment You're NOT Building For
+
+[Explicitly state who you're excluding and why - e.g., "Enterprise IT teams" or "Individual hobbyists"]
 
 ---
 
-### User Story 3 - [Brief Title] (Priority: P3)
+## Problems & Jobs-to-Be-Done (JTBD) *(mandatory)*
 
-[Describe this user journey in plain language]
+<!--
+  For each persona, identify the TOP 3 JTBD.
+  Use job stories: "When [situation], I want to [action], so I can [outcome]"
+  Include the current workaround and evidence of frequency/willingness-to-pay.
+-->
 
-**Why this priority**: [Explain the value and why it has this priority level]
+### Primary JTBD #1: [Job Title] (Priority: P1)
 
-**Independent Test**: [Describe how this can be tested independently]
+**Job Story**: When [situation], I want to [action], so I can [outcome - functional/emotional/social]
 
-**Acceptance Scenarios**:
+**Current Workaround**: [What users do today - tool, manual process, etc.]
 
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
+**Frequency**: [How often this job needs to happen - daily/weekly/monthly]
+
+**Evidence of willingness-to-pay**: [Signal - complaint in community, switching cost, etc.]
+
+**Success signal**: [How users will know they've solved the job]
+
+### Primary JTBD #2: [Job Title] (Priority: P2)
+
+[Same structure]
+
+### Primary JTBD #3: [Job Title] (Priority: P3)
+
+[Same structure]
 
 ---
 
-[Add more user stories as needed, each with an assigned priority]
-
-### Edge Cases
+## Hero Workflows *(mandatory)*
 
 <!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right edge cases.
+  Define 1-2 hero workflows - the minimal end-to-end paths through your product
+  that deliver the core value. Include TTFW target and guardrails.
 -->
 
-- What happens when [boundary condition]?
-- How does system handle [error scenario]?
+### Hero Workflow: [Workflow Name]
 
-## Requirements *(mandatory)*
+**Why this workflow matters**: [How it connects to top JTBD]
+
+**End-to-end flow**:
+
+1. **Input**: [What the user brings - data, context, problem]
+2. **Process**: [Steps user takes - user-centric, not technical]
+3. **Output**: [What they get - artifact, insight, decision]
+4. **Success signal**: [Moment of obvious value - "wow, this saved me X"]
+
+**TTFW (Time-to-First-Workflow) Target**: [e.g., "< 5 minutes for first productive use"]
+
+**Guardrails & Error Recovery**:
+- [What breaks the workflow?]
+- [How do users recover?]
+- [What's the backstop if AI fails?]
+
+### Hero Workflow 2 (Optional): [If Multiple Entry Points Exist]
+
+[Same structure as above]
+
+---
+
+## Success Metrics & PMF Signals *(mandatory)*
 
 <!--
-  ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right functional requirements.
+  Define how you'll know you're achieving PMF.
+  Include activation, engagement, retention, and AI-specific metrics.
 -->
 
-### Functional Requirements
+### Activation Metrics
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- [E.g., "% of signups completing hero workflow in first session"]
+- [E.g., "% creating first artifact within 24 hours"]
 
-*Example of marking unclear requirements:*
+### Engagement Metrics
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- [E.g., "Frequency: workflows per active user per week"]
+- [E.g., "Depth: % of users trying advanced features"]
 
-### Key Entities *(include if feature involves data)*
+### Retention Metrics
 
-- **[Entity 1]**: [What it represents, key attributes without implementation]
-- **[Entity 2]**: [What it represents, relationships to other entities]
+- [E.g., "Day-7 / Day-30 retention of activated users"]
+- [E.g., "Monthly active user churn rate"]
 
-## Success Criteria *(mandatory)*
+### AI-Specific Metrics
+
+- [E.g., "Quality of AI output as rated by users (1-5 scale)"]
+- [E.g., "% of outputs used without modification"]
+- [E.g., "User confidence in AI results (survey signal)"]
+
+### Business Metrics
+
+- [E.g., "Willingness to pay (free vs paid signup ratio)"]
+- [E.g., "LTV / CAC ratio target"]
+- [E.g., "Viral coefficient (new users per user)"]
+
+### PMF Validation Threshold
+
+- [E.g., "Sean Ellis test: 40%+ of users would be disappointed without product"]
+- [E.g., "Retention: 30%+ D30 for core segment"]
+- [E.g., "NPS: > 50 from activated users"]
+
+---
+
+## Constraints & Risks *(mandatory)*
+
+### Technical Feasibility
+
+- [E.g., "AI accuracy must be >= 85% for use case to be viable"]
+- [E.g., "Latency requirement: < 3 seconds for workflows to feel instant"]
+- [E.g., "Data privacy: GDPR-compliant, no training on user data without consent"]
+
+### Competitive Landscape
+
+- **Direct competitors**: [List 3-5 products solving similar JTBD]
+- **Why we're different**: [1-2 bullet contrasts]
+- **Incumbent workaround**: [What users default to - spreadsheet, manual process, etc.]
+
+### Top 3 PMF Risks & Mitigations
+
+| Risk | Impact | Mitigation |
+|------|--------|-----------|
+| [Risk 1 - e.g., "AI output quality insufficient"] | High | [Plan - e.g., "Conduct hero workflow tests with 10-20 users; measure satisfaction"] |
+| [Risk 2 - e.g., "Personas don't perceive as differentiated"] | High | [Plan - e.g., "Interview 5 non-adopters to understand why"]  |
+| [Risk 3 - e.g., "Distribution channel difficult/expensive"] | Medium | [Plan - e.g., "Test 3 channels (PH, Reddit, Twitter) with low budget first"] |
+
+---
+
+## Distribution & Adoption Hypotheses *(mandatory)*
+
+### Primary Channel Hypothesis
+
+- **Channel**: [E.g., "Product Hunt launch for early adopter visibility"]
+- **Rationale**: [Why this channel reaches our persona most efficiently]
+- **Success criterion**: [E.g., "100+ high-quality signups in first week"]
+
+### Secondary Channels (Ordered by Priority)
+
+1. [E.g., "Twitter/X: Problem-solution storytelling to micro-community"]
+2. [E.g., "Communities (Reddit, Discord): Direct engagement with target segment"]
+3. [E.g., "Content: Long-form examples showing hero workflow in action"]
+
+### Viral/Network Hypothesis
+
+- **Does collaboration/sharing drive value?** [Yes/No - explain briefly]
+- **If yes**: [E.g., "Users share workflows with teammates → encourages team sign-up"]
+- **If no**: [E.g., "Individual-use only; focus on word-of-mouth from power users"]
+
+### Early Adopter Profile
+
+- **Who jumps at this first?** [E.g., "Frustrated power users in niche communities"]
+- **Where to find them?** [E.g., "r/[subreddit], Twitter threads about [problem], Discord communities"]
+- **How to activate them?** [E.g., "Direct outreach + early access + high-touch onboarding"]
+
+---
+
+## Success Criteria for Discovery Phase *(mandatory)*
+
+Before proceeding to research planning, we consider discovery successful when:
+
+- [ ] **Persona Validation**: Conducted 10-20 interviews; personas feel distinct and real
+- [ ] **JTBD Clarity**: Top 3 JTBD consistently mentioned; evidence of willingness to pay evident
+- [ ] **Hero Workflow Buy-In**: 5+ users manually validated workflow end-to-end; "wow moment" observed
+- [ ] **Metrics Feasibility**: Can instrument all success metrics within our tech constraints
+- [ ] **Risk Acknowledgment**: Top 3 risks explicitly stated and mitigation plans drafted
+- [ ] **Go-to-Market Confidence**: Primary channel identified and testable in < 2 weeks
+
+---
+
+## Open Questions
 
 <!--
-  ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
+  Questions to resolve before committing to a full research plan.
+  These will be prioritized in /pmfkit.clarify
 -->
 
-### Measurable Outcomes
+- [E.g., "Is the hero workflow achievable in < 5 minutes, or closer to 15 minutes?"]
+- [E.g., "Do power users prefer collaboration features, or is this individual-use only?"]
+- [E.g., "Which persona segment has highest willingness-to-pay?"]
 
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+---
+
+## AI Product References
+
+<!--
+  Reference successful AI products to anchor expectations and patterns.
+  Show that our hero workflow and success metrics are grounded in proven PMF.
+-->
+
+**Products with similar hero workflows** (for pattern reference):
+- [E.g., "Cursor: IDE autocomplete → time saving in coding → adoption through dev community"]
+- [E.g., "Runway: Text-to-video in creative tool → render time reduction → viral creator adoption"]
+- [E.g., "Harvey: Legal document analysis → time saving for lawyers → enterprise sales + PLG"]
+
+**Key PMF patterns we're following**:
+- [E.g., "Product-led growth: free tier with workflow limits drives self-serve discovery"]
+- [E.g., "Community validation: early adopter community energizes brand + provides feedback loop"]
+
+---
+
+## Next Steps
+
+**Immediate**: Run `/pmfkit.clarify` to resolve top 3 open questions
+
+**If clarification passes**: Run `/pmfkit.plan` to design research methodology and validation experiments
+
+**If risks are high**: Run targeted hero workflow validation interviews (5-10 users) before full research planning

@@ -1,251 +1,304 @@
----
+# PMF Discovery Task Breakdown: [PRODUCT NAME]
 
-description: "Task list template for feature implementation"
----
+**Branch**: `[###-pmf-discovery]` | **Date**: [DATE] | **Plan**: [link]
 
-# Tasks: [FEATURE NAME]
-
-**Input**: Design documents from `/specs/[###-feature-name]/`
-**Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
-
-**Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
-
-**Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
-
-## Format: `[ID] [P?] [Story] Description`
-
-- **[P]**: Can run in parallel (different files, no dependencies)
-- **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
-- Include exact file paths in descriptions
-
-## Path Conventions
-
-- **Single project**: `src/`, `tests/` at repository root
-- **Web app**: `backend/src/`, `frontend/src/`
-- **Mobile**: `api/src/`, `ios/src/` or `android/src/`
-- Paths shown below assume single project - adjust based on plan.md structure
-
-<!-- 
-  ============================================================================
-  IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
-  
-  The /speckit.tasks command MUST replace these with actual tasks based on:
-  - User stories from spec.md (with their priorities P1, P2, P3...)
-  - Feature requirements from plan.md
-  - Entities from data-model.md
-  - Endpoints from contracts/
-  
-  Tasks MUST be organized by user story so each story can be:
-  - Implemented independently
-  - Tested independently
-  - Delivered as an MVP increment
-  
-  DO NOT keep these sample tasks in the generated tasks.md file.
-  ============================================================================
--->
-
-## Phase 1: Setup (Shared Infrastructure)
-
-**Purpose**: Project initialization and basic structure
-
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+**Overview**: Research and execution tasks organized by learning objective and PDCA cycles. Each learning objective has independent validation checkpoints.
 
 ---
 
-## Phase 2: Foundational (Blocking Prerequisites)
+## Phase 1: Problem & Persona Validation
 
-**Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
+**Objective**: Validate personas have real, frequent pain requiring solution
 
-**⚠️ CRITICAL**: No user story work can begin until this phase is complete
+**Duration**: 4 weeks | **Owner**: [Product/Research Lead]
 
-Examples of foundational tasks (adjust based on your project):
+**Exit Criteria**: 15+ interviews conducted; JTBD patterns clear; willingness-to-pay evident
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+### Task Group 1: Participant Recruitment
 
-**Checkpoint**: Foundation ready - user story implementation can now begin in parallel
+- [P] **T1.1** Create screener survey to identify target personas (5 questions)
+  - Owner: [Name]
+  - Type: Research prep
+  - Deliverable: Screener document + distribution links
+  - Due: [Date]
 
----
+- [P] **T1.2** Build participant recruiting list (30-40 candidates from target channels)
+  - Owner: [Name]
+  - Channels: Twitter, Reddit, communities, email outreach
+  - Deliverable: Outreach list + contact notes
+  - Due: [Date]
 
-## Phase 3: User Story 1 - [Title] (Priority: P1) 🎯 MVP
+- **T1.3** Recruit and schedule 15-20 interviews (book 2-4 per week)
+  - Owner: [Name]
+  - Type: Research coordination
+  - Deliverable: Interview calendar scheduled
+  - Due: [Date]
 
-**Goal**: [Brief description of what this story delivers]
+### Task Group 2: Problem-Focused Interviews
 
-**Independent Test**: [How to verify this story works on its own]
+- [P] **T1.4** Conduct interviews batch 1 (3-4 interviews, week 1)
+  - Owner: [Product Lead]
+  - Duration: 45-60 min per interview
+  - Deliverable: Interview notes, recorded (with permission)
+  - Due: End of week 1
+  - Check: After batch 1, are JTBD patterns emerging?
 
-### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
+- [P] **T1.5** Conduct interviews batch 2 (3-4 interviews, week 2)
+  - Owner: [Product Lead]
+  - Adjust questions based on batch 1 learnings
+  - Deliverable: Interview notes
+  - Due: End of week 2
 
-> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
+- **T1.6** Conduct interviews batch 3 (remaining interviews, weeks 3-4)
+  - Owner: [Product Lead]
+  - Deliverable: All interview notes
+  - Due: End of week 4
 
-- [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
+### Task Group 3: Synthesis & Analysis
 
-### Implementation for User Story 1
+- **T1.7** Create JTBD synthesis document
+  - Owner: [Product Lead]
+  - Content: Top 3 JTBD with supporting quotes + frequency data
+  - Deliverable: JTBD prioritization matrix
+  - Due: End of week 3
 
-- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
-- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T016 [US1] Add validation and error handling
-- [ ] T017 [US1] Add logging for user story 1 operations
+- **T1.8** Assess persona clarity + refinements
+  - Owner: [Product Lead]
+  - Validate: Do personas match our assumptions?
+  - Deliverable: Persona update doc with evidence
+  - Due: End of week 4
 
-**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
+- **T1.9** Document willingness-to-pay signals
+  - Owner: [Product Lead]
+  - Analyze: What would personas pay? Usage assumptions?
+  - Deliverable: Willingness-to-pay analysis
+  - Due: End of week 4
 
----
+### Phase 1 Checkpoint & Decision Gate
 
-## Phase 4: User Story 2 - [Title] (Priority: P2)
-
-**Goal**: [Brief description of what this story delivers]
-
-**Independent Test**: [How to verify this story works on its own]
-
-### Tests for User Story 2 (OPTIONAL - only if tests requested) ⚠️
-
-- [ ] T018 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T019 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
-
-### Implementation for User Story 2
-
-- [ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py
-- [ ] T021 [US2] Implement [Service] in src/services/[service].py
-- [ ] T022 [US2] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T023 [US2] Integrate with User Story 1 components (if needed)
-
-**Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
-
----
-
-## Phase 5: User Story 3 - [Title] (Priority: P3)
-
-**Goal**: [Brief description of what this story delivers]
-
-**Independent Test**: [How to verify this story works on its own]
-
-### Tests for User Story 3 (OPTIONAL - only if tests requested) ⚠️
-
-- [ ] T024 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T025 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
-
-### Implementation for User Story 3
-
-- [ ] T026 [P] [US3] Create [Entity] model in src/models/[entity].py
-- [ ] T027 [US3] Implement [Service] in src/services/[service].py
-- [ ] T028 [US3] Implement [endpoint/feature] in src/[location]/[file].py
-
-**Checkpoint**: All user stories should now be independently functional
+- **T1.10** Phase 1 exit review
+  - Decision: Does our persona + JTBD validation meet criteria?
+  - Go: 70%+ personas with high-frequency pain → advance to Phase 2
+  - Pivot: Different JTBD or persona shows stronger signal → re-target
+  - No-Go: Pain signals weak → reconsider positioning
+  - Deliverable: Go/pivot/kill decision document
+  - Due: End of week 4
 
 ---
 
-[Add more user story phases as needed, following the same pattern]
+## Phase 2: Hero Workflow Validation
+
+**Objective**: Validate hero workflow delivers value and meets TTFW target
+
+**Duration**: 3 weeks | **Owner**: [Product/UX Lead]
+
+**Exit Criteria**: 8+ workflow tests; 75%+ completion rate; users see value
+
+### Task Group 1: Usability Test Preparation
+
+- **T2.1** Finalize hero workflow narrative (step-by-step user perspective)
+  - Owner: [Product Lead]
+  - Content: No technical jargon; clear input → process → output
+  - Deliverable: Usability testing script
+  - Due: Start of week 1
+
+- **T2.2** Prepare test artifacts and data (realistic sample inputs)
+  - Owner: [Product/Design Lead]
+  - Content: Representative data for test users
+  - Deliverable: Test dataset + example artifacts
+  - Due: Start of week 1
+
+- **T2.3** Recruit 10-12 test participants from Phase 1 pool
+  - Owner: [Research Coordinator]
+  - Compensation: [Coffee gift card / early access / etc.]
+  - Deliverable: Test participants scheduled
+  - Due: Start of week 1
+
+### Task Group 2: Moderated Usability Testing
+
+- [P] **T2.4** Run usability tests batch 1 (2-3 tests, week 1)
+  - Owner: [Facilitator - Product/UX Lead]
+  - Measures: TTFW, completion rate, satisfaction, friction points
+  - Deliverable: Test video + notes
+  - Due: End of week 1
+  - Check: After 3 tests, what patterns of friction emerge?
+
+- [P] **T2.5** Run usability tests batch 2 (2-3 tests, week 2)
+  - Owner: [Facilitator]
+  - Incorporate learnings from batch 1
+  - Deliverable: Test video + notes
+  - Due: End of week 2
+
+- [P] **T2.6** Run usability tests batch 3 (remaining tests, week 3)
+  - Owner: [Facilitator]
+  - Deliverable: Test video + notes + completion summary
+  - Due: End of week 3
+
+### Task Group 3: Quick Iteration
+
+- **T2.7** Identify top 3 friction points (based on first 3 tests)
+  - Owner: [Product Lead]
+  - Prioritize: Which friction blocks users most?
+  - Deliverable: Friction priority list
+  - Due: End of week 1
+
+- **T2.8** Implement non-technical improvements (copy, order, defaults, help text)
+  - Owner: [Product/Design Lead]
+  - Type: UX refinement (no code implementation)
+  - Deliverable: Updated workflow description + new materials
+  - Due: End of week 2
+
+### Phase 2 Checkpoint & Decision Gate
+
+- **T2.9** Phase 2 exit review + go/kill/pivot decision
+  - Decision: Does hero workflow meet TTFW target and pass satisfaction threshold?
+  - Go: 75%+ completion, satisfaction >= 4/5, users say "I'd use this" → scale Phase 3
+  - Pivot: Workflow works for segment 2 not 1 → narrow focus
+  - No-Go: Core value unclear; redesign needed → extend Phase 2
+  - Deliverable: Go/no-go decision + next steps
+  - Due: End of week 3
 
 ---
 
-## Phase N: Polish & Cross-Cutting Concerns
+## Phase 3: Channel & Acquisition Testing
 
-**Purpose**: Improvements that affect multiple user stories
+**Objective**: Validate repeatable acquisition path for highest-PMF segment
 
-- [ ] TXXX [P] Documentation updates in docs/
-- [ ] TXXX Code cleanup and refactoring
-- [ ] TXXX Performance optimization across all stories
-- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
-- [ ] TXXX Security hardening
-- [ ] TXXX Run quickstart.md validation
+**Duration**: 4 weeks | **Owner**: [Growth Lead]
 
----
+**Exit Criteria**: Activation 15%+ on leading channel; clear CAC + retention path
 
-## Dependencies & Execution Order
+### Task Group 1: Channel Prep
 
-### Phase Dependencies
+- **T3.1** Design launch campaign for channel 1 (e.g., Product Hunt)
+  - Owner: [Growth Lead]
+  - Content: Title, tagline, deck, demo video, hunter strategy
+  - Deliverable: Launch plan
+  - Due: Week 1
 
-- **Setup (Phase 1)**: No dependencies - can start immediately
-- **Foundational (Phase 2)**: Depends on Setup completion - BLOCKS all user stories
-- **User Stories (Phase 3+)**: All depend on Foundational phase completion
-  - User stories can then proceed in parallel (if staffed)
-  - Or sequentially in priority order (P1 → P2 → P3)
-- **Polish (Final Phase)**: Depends on all desired user stories being complete
+- **T3.2** Design launch campaign for channel 2 (e.g., Twitter launch thread)
+  - Owner: [Content/Growth Lead]
+  - Content: Thread outline, timing, engagement plan
+  - Deliverable: Tweet draft
+  - Due: Week 1
 
-### User Story Dependencies
+- **T3.3** Design launch campaign for channel 3 (e.g., community outreach)
+  - Owner: [Growth Lead]
+  - Content: Community selection, moderation approach, onboarding flow
+  - Deliverable: Community engagement plan
+  - Due: Week 1
 
-- **User Story 1 (P1)**: Can start after Foundational (Phase 2) - No dependencies on other stories
-- **User Story 2 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1 but should be independently testable
-- **User Story 3 (P3)**: Can start after Foundational (Phase 2) - May integrate with US1/US2 but should be independently testable
+### Task Group 2: Campaign Execution
 
-### Within Each User Story
+- [P] **T3.4** Execute channel 1 launch
+  - Owner: [Growth Lead]
+  - Deliverable: Campaign live; daily tracking active
+  - Due: Week 1-2
 
-- Tests (if included) MUST be written and FAIL before implementation
-- Models before services
-- Services before endpoints
-- Core implementation before integration
-- Story complete before moving to next priority
+- [P] **T3.5** Execute channel 2 launch
+  - Owner: [Content Lead]
+  - Deliverable: Campaign live; daily tracking active
+  - Due: Week 1-2
 
-### Parallel Opportunities
+- [P] **T3.6** Execute channel 3 outreach
+  - Owner: [Growth Lead]
+  - Deliverable: Community engaged; early adopters on-boarded
+  - Due: Week 1-2
 
-- All Setup tasks marked [P] can run in parallel
-- All Foundational tasks marked [P] can run in parallel (within Phase 2)
-- Once Foundational phase completes, all user stories can start in parallel (if team capacity allows)
-- All tests for a user story marked [P] can run in parallel
-- Models within a story marked [P] can run in parallel
-- Different user stories can be worked on in parallel by different team members
+### Task Group 3: Metrics & Analysis
 
----
+- **T3.7** Instrument and track activation funnel per channel
+  - Owner: [Analytics/Product]
+  - Metrics: Signups, hero workflow start, completion, satisfaction
+  - Deliverable: Dashboard live
+  - Due: Week 1
 
-## Parallel Example: User Story 1
+- [P] **T3.8** Daily check-in: channel performance (weeks 1-4)
+  - Owner: [Growth Lead]
+  - Type: Ongoing monitoring
+  - Deliverable: Daily metrics snapshot in Slack/shared doc
+  - Due: Daily
 
-```bash
-# Launch all tests for User Story 1 together (if tests requested):
-Task: "Contract test for [endpoint] in tests/contract/test_[name].py"
-Task: "Integration test for [user journey] in tests/integration/test_[name].py"
+- **T3.9** Weekly analysis: which channel + segment performing best?
+  - Owner: [Growth + Product]
+  - Deliverable: Weekly summary with performance ranking
+  - Due: Weekly (end of each week)
 
-# Launch all models for User Story 1 together:
-Task: "Create [Entity1] model in src/models/[entity1].py"
-Task: "Create [Entity2] model in src/models/[entity2].py"
-```
+### Task Group 4: Quick Growth Experiments
 
----
+- **T3.10** Test copy variation on best-performing channel (week 2-3)
+  - Owner: [Growth Lead]
+  - Hypothesis: Better headline/tagline increases activation
+  - Deliverable: A/B test results
+  - Due: Week 3
 
-## Implementation Strategy
+- **T3.11** Test onboarding flow improvement (week 3)
+  - Owner: [Product/Design]
+  - Hypothesis: Clearer first-time-user guidance improves hero workflow start rate
+  - Deliverable: Onboarding variant + metrics
+  - Due: Week 3
 
-### MVP First (User Story 1 Only)
+### Phase 3 Checkpoint & Decision Gate
 
-1. Complete Phase 1: Setup
-2. Complete Phase 2: Foundational (CRITICAL - blocks all stories)
-3. Complete Phase 3: User Story 1
-4. **STOP and VALIDATE**: Test User Story 1 independently
-5. Deploy/demo if ready
-
-### Incremental Delivery
-
-1. Complete Setup + Foundational → Foundation ready
-2. Add User Story 1 → Test independently → Deploy/Demo (MVP!)
-3. Add User Story 2 → Test independently → Deploy/Demo
-4. Add User Story 3 → Test independently → Deploy/Demo
-5. Each story adds value without breaking previous stories
-
-### Parallel Team Strategy
-
-With multiple developers:
-
-1. Team completes Setup + Foundational together
-2. Once Foundational is done:
-   - Developer A: User Story 1
-   - Developer B: User Story 2
-   - Developer C: User Story 3
-3. Stories complete and integrate independently
+- **T3.12** Phase 3 exit review: go-to-market validation
+  - Decision: Do we have a repeatable, scalable acquisition path?
+  - Scale: Activation 15%+, D7 retention 25%+, clear channel winner → ready to grow
+  - Optimize: Metrics good but not great → optimize campaigns before broad scale
+  - Pivot: Weak across channels → revisit hero workflow or positioning
+  - No-Go: Activation < 10% → need fundamental value rework
+  - Deliverable: Channel performance matrix + go/scale/pivot decision
+  - Due: End of week 4
 
 ---
 
-## Notes
+## Cross-Phase: Continuous Rituals
 
-- [P] tasks = different files, no dependencies
-- [Story] label maps task to specific user story for traceability
-- Each user story should be independently completable and testable
-- Verify tests fail before implementing
-- Commit after each task or logical group
-- Stop at any checkpoint to validate story independently
-- Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
+### Weekly PMF Review (Every Monday)
+
+- **T0.1** Run weekly PMF sync (30-60 min)
+  - Owner: [Product Lead]
+  - Attendees: Product, Growth, Design, Community
+  - Topics: Metrics → learnings → blockers → next week priorities
+  - Deliverable: Updated task priorities + any pivot decisions
+  - Recurrence: Every Monday
+
+### Document Management
+
+- **T0.2** Maintain running research synthesis doc
+  - Owner: [Product Lead]
+  - Content: Key quotes, persona updates, JTBD evidence, evolving hypotheses
+  - Deliverable: Living document (updated weekly)
+  - Recurrence: Ongoing
+
+- **T0.3** Create phase-end summary (after each phase)
+  - Owner: [Product Lead]
+  - Content: What did we learn? What changed? Go/pivot/kill decision?
+  - Deliverable: Phase summary doc
+  - Recurrence: Every 3-4 weeks
+
+---
+
+## Dependencies & Critical Path
+
+- **Phase 1** must complete before Phase 2 (need validated personas + JTBD)
+- **Phase 2** must show successful hero workflow before Phase 3 (otherwise channel testing meaningless)
+- **Phase 3** validates go-to-market; informs scaling decisions
+
+**Total Duration**: 11 weeks (4+3+4) for full discovery cycle
+**Critical Path Indicator**: Participant recruitment (T1.2, T2.3) drives timeline
+
+---
+
+## Success Metrics Summary
+
+By end of all phases, we will have:
+
+✅ **Persona Clarity**: 70%+ of target personas report high-frequency pain (2+x/week)
+
+✅ **JTBD Validation**: Top 3 JTBD confirmed through interviews + willingness-to-pay evident
+
+✅ **Workflow Proven**: 75%+ of test users complete hero workflow; TTFW < [target]
+
+✅ **Go-to-Market Path**: Clear acquisition channel; activation 15%+, D7 retention 25%+
+
+✅ **PMF Decision**: Go/scale, optimize further, or pivot with confidence and data

@@ -1,55 +1,127 @@
 
 
-# step 6.1: use claude code to build constitution.md
+# Step 6.1: Use Claude Code to build constitution.md
 
 ```prompt
 
-/constitution this pmf-kit project is a folk from the github.com spec-kit project. read @README_spec-kit.md to have a global view of the original spec-kit project. spec-driven
-  development is a great methodology for doing complex work with llm-based agents. the same methodology may be applied in different areas like project management, product design,
-  marketing, business writing, and thousands of other jobs. the pmf-kit is a featured variant version from spec-kit , is for the project management of finding product-market-fit of
-  ai saas products. i will also use this project as an great example of how to make your own spec-kit varients, like pm-kit, pd-kit, marketing-kit, biz-writing-kit. i will develope
-  comprehensive documents in @refs/ to show how to step by step use prompts and search tools to prepare for up to date references and edit the templates of the original spec-kit
-  repo.   in the constitution of this task, there are a few things are important. 1. i want to take advantage of the whole spec-kit repo design including the way it install and the
-  command cli, the way it works with claude code cursor and other coding agents. 2. since users may install many spec-kit like kits, the command "specify" may have conflict with
-  different packages, you need find a way to avoid conflict if user install spec-kit, pmf-kit, pd-kit and more kits on the same computer. 3. related to 2, "speckit.plan"
-  "speckit.implent" ... are the ways to call the command inside claude code or other compatiable coding agents products. you must also make sure there is no conflict of using
-  "speckit.plan" and "pmfkit.plan". they can trigger different agents. think carefully and globally first , and then generate the constitution for pmf-kit
+/constitution this pmf-kit project is a fork of the github.com spec-kit project. read @README_spec-kit.md to get a global view of the original spec-kit and its spec-driven development workflow.
+
+spec-driven development is a strong methodology for complex work with llm-based agents, and the same pattern can be applied to many domains (project management, product design, marketing, business writing, etc.). pmf-kit is a featured variant of spec-kit focused on project management for discovering and validating product-market fit for ai saas products.
+
+i will also use this project as a worked example of how to create your own spec-kit variants (for example, pm-kit, pd-kit, marketing-kit, biz-writing-kit). i will develop comprehensive documents in @refs/ to show, step by step, how to use prompts and search tools to build up-to-date references and adapt the original spec-kit templates.
+
+in the constitution for this project, a few things are especially important:
+1. i want to reuse the overall spec-kit design, including installation model, cli commands, and how it integrates with claude code, cursor, and other coding agents.
+2. users may install multiple *-kit variants on the same machine, so the base `specify` command name can conflict across packages. you must design a clean naming and namespace strategy so spec-kit, pmf-kit, pd-kit, and other kits can coexist without collisions.
+3. related to (2), slash commands like `pmfkit.plan` and `pmfkit.implement` are how agents such as claude code invoke workflows. you must ensure there is no conflict between commands like `pmfkit.plan` and `pmfkit.plan`, and that they can reliably trigger different agents or workflows.
+
+think carefully and globally about the architecture, naming, and multi-kit coexistence first, then draft a clear, opinionated constitution for pmf-kit that respects these constraints and follows the principles in @memory/constitution.md.
+
+IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
 
 ```
 
 
-# step 6.2: use claude code to build spec.md
+# Step 6.2: Use Claude Code to build spec.md
 
 
 
 ```prompt
+/specify is running… this pmf-kit project is a fork of the github.com spec-kit project. read @README_spec-kit.md to get a global view of the original spec-kit project and its spec-driven development workflow.
 
+spec-driven development is a strong methodology for complex work with llm-based agents, and the same pattern can be applied to many domains (project management, product design, marketing, business writing, etc.). pmf-kit is a featured variant of spec-kit focused on project management for discovering and validating product-market fit for ai saas products.
 
-/specify is running… this pmf-kit project is a folk from the github.com spec-kit project. read @README_spec-kit.md to have a global view of the original spec-kit project. 
-spec-driven development is a great methodology for doing complex work with llm-based agents. the same methodology may be applied in different areas like project management, product 
-design, marketing, business writing, and thousands of other jobs. the pmf-kit is a featured variant version from spec-kit , is for the project management of finding product-market-fit
- of ai saas products. read @memory/constitution.md and generate spec.md   of this task. MUST read @refs/1_principles_for_constitution.md  there are a few things are important. 1. i 
-want to take advantage of the whole spec-kit repo design including the way it install and the command cli, the way it works with claude code cursor and other coding agents. 2. since 
-users may install many spec-kit like kits, the command "specify" may have conflict with different packages, you need find a way to avoid conflict if user install spec-kit, pmf-kit, 
-pd-kit and more kits on the same computer. 3. related to 2, "speckit.plan" "speckit.implent" ... are the ways to call the command inside claude code or other compatiable coding agents
- products. you must also make sure there is no conflict of using "speckit.plan" and "pmfkit.plan". they can trigger different agents. think carefully and globally first , and then 
-generate the spec.md for pmf-kit 
+read @memory/constitution.md and generate the spec.md for this project. you MUST also read @refs/2_ define_for_specify.md and follow its structure and intent.
 
+there are a few important constraints:
+1. re-use the overall spec-kit design, including the cli model and how it integrates with claude code, cursor, and other coding agents.
+2. assume users may install multiple *-kit variants on the same machine, so the base `specify` command name can conflict across packages. design a clean naming and namespace strategy so spec-kit, pmf-kit, pd-kit, and other variants can coexist.
+3. related to (2), slash commands like `pmfkit.plan` and `pmfkit.implement` are how agents invoke workflows. ensure there is no conflict between commands such as `pmfkit.plan` and `pmfkit.plan`, and that each reliably triggers the correct workflow.
 
+think carefully and globally about architecture, naming, and multi-kit coexistence first, then draft a clear, opinionated spec.md for pmf-kit that is consistent with @memory/constitution.md and suitable as a reference for future *-kit variants.
+
+IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
 
 ```
 
 
 
-# step 6.3: build plan.md
+# Step 6.3: Use Claude Code to build plan.md
+
+```prompt
+
+/plan this pmf-kit project is a fork of the github.com spec-kit project. read @README_spec-kit.md to get a global view of the original spec-kit project and its spec-driven development workflow.
+
+spec-driven development is a strong methodology for complex work with llm-based agents, and the same pattern can be applied to many domains (project management, product design, marketing, business writing, etc.). pmf-kit is a featured variant of spec-kit focused on project management for discovering and validating product-market fit for ai saas products.
+
+for this task, read @memory/constitution.md and @specs/001-pmf-kit-variant/spec.md. you MUST also read @refs/3_project_mangement_for_plan.md and follow its structure and intent when generating plan.md.
+
+there are a few important constraints:
+1. re-use the overall spec-kit design, including how it is installed, how the cli works, and how it integrates with claude code, cursor, and other coding agents.
+2. assume users may install multiple *-kit variants on the same machine, so the base `specify` command name can conflict across packages. design a clean naming and namespace strategy so spec-kit, pmf-kit, pd-kit, and other variants can coexist.
+3. related to (2), slash commands like `pmfkit.plan` and `pmfkit.implement` are how agents invoke workflows. ensure there is no conflict between commands such as `pmfkit.plan` and `pmfkit.plan`, and that each reliably triggers the correct workflow.
+
+think carefully and globally about architecture, naming, and multi-kit coexistence first. then generate a clear, opinionated plan.md for pmf-kit that:
+- respects the principles in @memory/constitution.md,
+- aligns with the spec in @specs/001-pmf-kit-variant/spec.md, and
+- can guide edits to the spec-kit templates in @templates/ and @templates/commands/ to swap `pmfkit` → `pmfkit` **without** changing the underlying infrastructure.
+
+IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+
+```
 
 
-# step 6.4: build tasks.md
+
+# Step 6.4: User Claude Code to build tasks.md
+
+
+```prompt
+
+/tasks is running… this pmf-kit project is a fork of the github.com spec-kit project. read @README_spec-kit.md to get a global view of the original spec-kit project and its spec-driven development workflow.
+
+spec-driven development is a strong methodology for complex work with llm-based agents, and the same pattern can be applied to many domains (project management, product design, marketing, business writing, etc.). pmf-kit is a featured variant of spec-kit focused on project management for discovering and validating product-market fit for ai saas products.
+
+for this task, read @memory/constitution.md, @specs/001-pmf-kit-variant/spec.md, and @specs/001-pmf-kit-variant/plan.md. you MUST also read @refs/4_pm_tasking_for_tasks.md and follow its structure and intent when generating tasks.md.
+
+there are a few important constraints:
+1. re-use the overall spec-kit design, including how it is installed, how the cli works, and how it integrates with claude code, cursor, and other coding agents.
+2. assume users may install multiple *-kit variants on the same machine, so the base `specify` command name can conflict across packages. design a clean naming and namespace strategy so spec-kit, pmf-kit, pd-kit, and other variants can coexist.
+3. related to (2), slash commands like `pmfkit.plan` and `pmfkit.implement` are how agents invoke workflows. ensure there is no conflict between commands such as `pmfkit.plan` and `pmfkit.plan`, and that each reliably triggers the correct workflow.
+
+think carefully and globally about architecture, naming, and multi-kit coexistence first. then generate a clear, opinionated tasks.md for pmf-kit that:
+- respects the principles in @memory/constitution.md,
+- aligns with the spec and plan in @specs/001-pmf-kit-variant/, and
+- can guide edits to the spec-kit templates in @templates/ and @templates/commands/ to swap `pmfkit` → `pmfkit` **without** changing the underlying infrastructure. continue writing tasks.md in the current git branch.
+
+IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+
+```
+
+# Step 6.5: Use Claude Code to implement
+
+
+```prompt
+/implement this pmf-kit project is a fork of the github.com spec-kit project. read @README_spec-kit.md to get a global view of the original spec-kit project and its spec-driven development workflow.
+
+spec-driven development is a strong methodology for complex work with llm-based agents, and the same pattern can be applied to many domains (project management, product design, marketing, business writing, etc.). pmf-kit is a featured variant of spec-kit focused on project management for discovering and validating product-market fit for ai saas products.
+
+for this task, read @memory/constitution.md, @specs/001-pmf-kit-variant/spec.md, and @specs/001-pmf-kit-variant/plan.md. you MUST also read @specs/001-pmf-kit-variant/tasks.md and @refs/4_pm_tasking_for_tasks.md to understand the pmf tasking approach.
+
+there are a few important constraints:
+1. re-use the overall spec-kit design, including how it is installed, how the cli works, and how it integrates with claude code, cursor, and other coding agents.
+2. assume users may install multiple *-kit variants on the same machine, so the base `specify` command name can conflict across packages. design a clean naming and namespace strategy so spec-kit, pmf-kit, pd-kit, and other variants can coexist.
+3. related to (2), slash commands like `pmfkit.plan` and `pmfkit.implement` are how agents invoke workflows. ensure there is no conflict between commands such as `pmfkit.plan` and `pmfkit.plan`, and that each reliably triggers the correct workflow.
+
+think carefully and globally about architecture, naming, and multi-kit coexistence first. then implement the changes described in tasks.md for pmf-kit by:
+- editing the spec-kit templates in @templates/ and @templates/commands/ to swap `pmfkit` → `pmfkit` **without** changing the underlying infrastructure, and
+- keeping all edits in the current git branch as you complete the implementation.
+
+IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+```
 
 
 
-
-# step 6.5: upload to github and installation and tests
+# Step 6.6: Upload to github, install from it, and tests
 
 
 
