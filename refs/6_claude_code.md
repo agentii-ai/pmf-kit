@@ -1,3 +1,6 @@
+> **Author:** frank@agentii.ai  
+> **Version:** v0.0.3  
+> **Last Updated (NYC):** 2025-12-03 04:34
 
 
 # Step 6.1: Use Claude Code to build constitution.md
@@ -67,6 +70,7 @@ think carefully and globally about architecture, naming, and multi-kit coexisten
 - can guide edits to the spec-kit templates in @templates/ and @templates/commands/ to swap `pmfkit` → `pmfkit` **without** changing the underlying infrastructure.
 
 IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+IMPORTANT: The word "specify" shows up in two situations. One situation is as the command name like in "speckit.specify" or "./specify". In this situation, when change to "pmf.specify" or "pmfkit.specify", or "./specify", you should keep as it is for consistency. In the second situation, "specify" refers to the package name, like in folder name for "./specify/memory/constituation.md". Since multiple spec-kit like kits may work together in the same project, their package names should be distinct to avoid conflicts. Change "./specify/memory/constituation.md" to "./pmfkit/memory/constituation.md" or "./pmf/memory/constituation.md".
 REMEMBER to edit the package names in pyproject.toml file.
 
 ```
@@ -95,6 +99,7 @@ think carefully and globally about architecture, naming, and multi-kit coexisten
 - can guide edits to the spec-kit templates in @templates/ and @templates/commands/ to swap `pmfkit` → `pmfkit` **without** changing the underlying infrastructure. continue writing tasks.md in the current git branch.
 
 IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+IMPORTANT: The word "specify" shows up in two situations. One situation is as the command name like in "speckit.specify" or "./specify". In this situation, when change to "pmf.specify" or "pmfkit.specify", or "./specify", you should keep as it is for consistency. In the second situation, "specify" refers to the package name, like in folder name for "./specify/memory/constituation.md". Since multiple spec-kit like kits may work together in the same project, their package names should be distinct to avoid conflicts. Change "./specify/memory/constituation.md" to "./pmfkit/memory/constituation.md" or "./pmf/memory/constituation.md".
 REMEMBER to edit the package names in pyproject.toml file.
 
 ```
@@ -119,6 +124,7 @@ think carefully and globally about architecture, naming, and multi-kit coexisten
 - keeping all edits in the current git branch as you complete the implementation.
 
 IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit for the current Claude Code agent to use.
+IMPORTANT: The word "specify" shows up in two situations. One situation is as the command name like in "speckit.specify" or "./specify". In this situation, when change to "pmf.specify" or "pmfkit.specify", or "./specify", you should keep as it is for consistency. In the second situation, "specify" refers to the package name, like in folder name for "./specify/memory/constituation.md". Since multiple spec-kit like kits may work together in the same project, their package names should be distinct to avoid conflicts. Change "./specify/memory/constituation.md" to "./pmfkit/memory/constituation.md" or "./pmf/memory/constituation.md".
 REMEMBER to edit the package names in pyproject.toml file.
 
 ```

@@ -1,5 +1,5 @@
 > **Author:** frank@agentii.ai  
-> **Version:** v0.1.0  
+> **Version:** v0.0.3  
 > **Last Updated (NYC):** 2025-12-03 04:34
 
 # Instructions: How to Build Your Own Spec-Kit Variant (for Any Job)
@@ -349,3 +349,5 @@ Imagine you want a variant for B2B marketing campaigns:
   - Examples of great campaigns, landing pages, email sequences, and measurement frameworks.
 
 With this pattern, any domain—project management, design, marketing, writing—can have a **Spec Kit–style workflow** that is agent-friendly, repeatable, and grounded in real-world practices.
+
+

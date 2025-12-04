@@ -1,5 +1,5 @@
 > **Author:** frank@agentii.ai  
-> **Version:** v0.1.0  
+> **Version:** v0.0.3  
 > **Last Updated (NYC):** 2025-12-03 04:34
 
 # Step 4: Tasking methodology
