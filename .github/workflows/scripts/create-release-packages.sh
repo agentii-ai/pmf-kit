@@ -160,7 +160,7 @@ build_variant() {
     esac
   fi
 
-  [[ -d .pmf/templates ]] && { mkdir -p "$SPEC_DIR/templates"; (cd .pmf && find templates -type f -not -path "templates/commands/*" -not -name "vscode-settings.json" -exec cp --parents {} "$SPEC_DIR"/ \;) ; echo "Copied .pmf/templates -> .pmf/templates"; }
+  [[ -d .pmf/templates ]] && { mkdir -p "$SPEC_DIR/templates"; cp -r .pmf/templates/* "$SPEC_DIR/templates/" 2>/dev/null || true; rm -rf "$SPEC_DIR/templates/commands" "$SPEC_DIR/templates/vscode-settings.json" 2>/dev/null || true; echo "Copied .pmf/templates -> .pmf/templates"; }
   
   # NOTE: We substitute {ARGS} internally. Outward tokens differ intentionally:
   #   * Markdown/prompt (claude, copilot, cursor-agent, opencode): $ARGUMENTS

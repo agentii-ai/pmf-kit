@@ -42,9 +42,20 @@ While Spec-Kit enables spec-driven software development with AI agents, **PMF-Ki
 
 Choose your preferred installation method:
 
-#### Option 1: Persistent Installation (Recommended)
+#### Option 1: One-Time Usage (Recommended)
 
-Install once and use everywhere:
+Run directly without installing—always uses the latest version:
+
+```bash
+uvx --from git+https://github.com/agentii-ai/pmf-kit.git pmf init my-product
+uvx --from git+https://github.com/agentii-ai/pmf-kit.git pmf check
+```
+
+> **Note**: This project is improving rapidly. We recommend `uvx` to always get the latest features and fixes.
+
+#### Option 2: Persistent Installation
+
+Install once and use everywhere (may require periodic updates):
 
 ```bash
 uv tool install pmf-cli --from git+https://github.com/agentii-ai/pmf-kit.git
@@ -57,12 +68,10 @@ pmf init my-product
 pmf check
 ```
 
-#### Option 2: One-Time Usage
-
-Run directly without installing:
+To update to the latest version:
 
 ```bash
-uvx --from git+https://github.com/agentii-ai/pmf-kit.git pmf init my-product
+uv tool install pmf-cli --force --from git+https://github.com/agentii-ai/pmf-kit.git
 ```
 
 ### 2. Initialize Your First PMF Project
