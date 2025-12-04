@@ -39,6 +39,11 @@ jobs:
         run: |
           chmod +x .github/workflows/scripts/create-release-packages.sh
           .github/workflows/scripts/create-release-packages.sh ${{ steps.get_tag.outputs.new_version }}
+      - name: Validate release packages
+        if: steps.check_release.outputs.exists == 'false'
+        run: |
+          chmod +x scripts/validate-templates.sh
+          ./scripts/validate-templates.sh .genreleases/
       - name: Generate release notes
         if: steps.check_release.outputs.exists == 'false'
         id: release_notes

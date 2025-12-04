@@ -125,7 +125,14 @@ REMEMBER to edit the package names in pyproject.toml file.
 
 
 
-# Step 6.6: Upload to github, install from it, and tests
+# Step 6.6: Upload to github, automatically create release
+
+
+
+
+
+
+# Step 6.7: Install from it, and run tests to verify the implementation
 
 
 

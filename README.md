@@ -118,6 +118,29 @@ PMF-Kit works with all agents supported by Spec-Kit:
 
 ---
 
+## 📦 PMF-Kit Templates
+
+PMF-Kit provides project templates for 18 AI coding agents, automatically downloaded when you run `pmf init`. Each template includes:
+
+- **PMF-Kit Constitution v1.0.0** with 7 PMF-specific principles
+- **Workflow templates**: spec.md, plan.md, tasks.md for research documentation
+- **9 slash commands**: /pmfkit.specify, /pmfkit.plan, /pmfkit.tasks, /pmfkit.implement, /pmfkit.clarify, /pmfkit.analyze, /pmfkit.checklist, /pmfkit.taskstoissues, /pmfkit.constitution
+- **Scripts**: Bash or PowerShell variants for automation
+- **Memory system**: constitution.md for project-specific principles
+
+### Supported Template Agents
+
+Templates are available for all 18 agents in both bash and PowerShell variants (36 total):
+
+- Claude Code • Cursor Agent • Windsurf • Google Gemini
+- GitHub Copilot • Qoder • Qwen • OpenCode
+- Codex • KiloCode • Auggie • CodeBuddy
+- AMP • Shai • Amazon Q • Bob • Roo
+
+See [GitHub Releases](https://github.com/agentii-ai/pmf-kit/releases) for downloadable template archives with SHA-256 checksums.
+
+---
+
 ## 🎯 Core PMF Workflow
 
 ### Phase 1: Specification (`/pmfkit.specify`)
