@@ -4,6 +4,10 @@ SYNC IMPACT REPORT
 Version: 0.0.0 → 1.0.0 (INITIAL CONSTITUTION)
 Rationale: Initial constitution establishment for PMF-Kit project
 
+TEST WORKFLOW MARKER: TMPL-010 workflow test v0.1.0-rc1
+This marker is used to trigger the release workflow for testing purposes.
+After verification, this line will be reverted before the production release.
+
 Added Sections:
 - Complete constitution framework for PMF-Kit
 - 7 core principles adapted for product-market-fit discovery
