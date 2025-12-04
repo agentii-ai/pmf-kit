@@ -40,16 +40,24 @@ check_frontmatter_namespace() {
     return 1
   fi
 
+  # Special handling for Copilot (uses .github/agents/ structure)
+  local command_search_dir="$agent_dir"
+  if [[ "$agent_dir" == *"/.github" ]]; then
+    if [[ -d "$agent_dir/agents" ]]; then
+      command_search_dir="$agent_dir/agents"
+    fi
+  fi
+
   # Check all command files in agent directory
-  local command_files=$(find "$agent_dir" -type f \( -name "pmfkit.*.md" -o -name "pmfkit.*.toml" -o -name "pmfkit.*.agent.md" \) 2>/dev/null | wc -l)
+  local command_files=$(find "$command_search_dir" -type f \( -name "pmfkit.*.md" -o -name "pmfkit.*.toml" -o -name "pmfkit.*.agent.md" \) 2>/dev/null | wc -l)
 
   if [[ $command_files -lt 9 ]]; then
     print_fail "Command file count check: found $command_files, expected 9"
     return 1
   fi
 
-  # Check frontmatter in a sample file
-  local sample_file=$(find "$agent_dir" -type f -name "pmfkit.*.md" | head -1)
+  # Check frontmatter in a sample file (support .md, .toml, and .agent.md)
+  local sample_file=$(find "$command_search_dir" -type f \( -name "pmfkit.*.md" -o -name "pmfkit.*.agent.md" \) | head -1)
   if [[ -n "$sample_file" ]]; then
     # Extract agent line from YAML frontmatter
     local agent_line=$(sed -n '/^---$/,/^---$/p' "$sample_file" 2>/dev/null | grep "^agent:" | head -1 || true)
