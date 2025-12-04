@@ -157,8 +157,8 @@ uv tool install pmf-cli --from git+https://github.com/agentii-ai/pmf-kit.git@mai
 pmf init test-pmf-project --agent claude
 
 # Verify templates are from pmf-kit (not spec-kit fallback)
-ls test-pmf-project/.specify/memory/constitution.md
-grep "PMF-Kit Constitution" test-pmf-project/.specify/memory/constitution.md
+ls test-pmf-project/.pmf/memory/constitution.md
+grep "PMF-Kit Constitution" test-pmf-project/.pmf/memory/constitution.md
 ```
 
 **TMPL-013**: Remove Spec-Kit Fallback Logic from CLI

@@ -38,8 +38,8 @@ check_frontmatter_namespace() {
     return 0
   fi
 
-  # Find agent directory (anything starting with . except .pmf)
-  local agent_dir=$(find "$extract_dir" -maxdepth 1 -type d -name ".*" ! -name ".pmf" | head -1)
+  # Find agent directory (anything starting with . except .specify)
+  local agent_dir=$(find "$extract_dir" -maxdepth 1 -type d -name ".*" ! -name ".specify" | head -1)
   if [[ -z "$agent_dir" ]]; then
     print_fail "No agent directory found (expected .{agent}/)"
     return 1

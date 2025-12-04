@@ -27,7 +27,7 @@ PMF-Kit has been successfully transformed from a spec-kit fork into a production
 ```bash
 specify init <project>
 specify check
-/speckit.specify
+/speckit.pmf
 /speckit.plan
 /speckit.tasks
 ```
@@ -36,7 +36,7 @@ specify check
 ```bash
 pmf init <project>
 pmf check
-/pmfkit.specify
+/pmfkit.pmf
 /pmfkit.plan
 /pmfkit.tasks
 ```
@@ -90,7 +90,7 @@ pmf check
 
 - `/templates/commands/` (9 files): constitution, specify, clarify, plan, tasks, implement, analyze, checklist, taskstoissues
 - `/templates/` core templates (6 files): spec-template, plan-template, tasks-template, checklist-template, agent-file-template, vscode-settings.json
-- `/pmf-kit/.specify/templates/` (5 files): Mirrored templates for packaged distribution
+- `/pmf-kit/.pmf/templates/` (5 files): Mirrored templates for packaged distribution
 - `/scripts/bash/` (5 files): create-new-feature.sh, setup-plan.sh, common.sh, check-prerequisites.sh, update-agent-context.sh
 - `.claude/` (NOT modified): 22 speckit instances intentionally preserved for current agent session
 
@@ -295,7 +295,7 @@ pmf init my-product
 # Creates branch: 001-my-product-description
 
 cd my-product
-/pmfkit.specify
+/pmfkit.pmf
 # Follow prompts to define personas, JTBD, hero workflows, metrics
 
 /pmfkit.clarify
@@ -322,8 +322,8 @@ specify init my-feature          # For software features
 pmf init my-product             # For PMF discovery
 
 # Agent commands are namespaced
-/speckit.specify                # Software feature spec
-/pmfkit.specify                 # PMF specification
+/speckit.pmf                # Software feature spec
+/pmfkit.pmf                 # PMF specification
 ```
 
 ---

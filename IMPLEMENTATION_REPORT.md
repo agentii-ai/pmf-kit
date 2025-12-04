@@ -102,7 +102,7 @@ AGENTS=claude SCRIPTS=sh ./scripts/build-templates.sh v0.1.0
 1. ✅ Frontmatter uses `agent: pmfkit.*` namespace
 2. ✅ All required files present (constitution, templates, scripts)
 3. ✅ No `/speckit.` references in content
-4. ✅ Correct directory structure (.specify/ + .{agent}/)
+4. ✅ Correct directory structure (.pmf/ + .{agent}/)
 5. ✅ Constitution is PMF-Kit v1.0.0
 6. ✅ Script consistency (bash/ps directories match variant)
 7. ✅ ZIP file integrity
@@ -170,10 +170,10 @@ sha256:25a65e13d93e74295c9b7dba3dcaf9a28cf5c141a24319a91ef7e7ecc171fbbe
 
 ### Template Structure
 ```
-✅ .specify/memory/constitution.md (PMF-Kit v1.0.0)
-✅ .specify/scripts/bash/ (bash automation scripts)
-✅ .specify/scripts/powershell/ (PowerShell scripts)
-✅ .specify/templates/ (spec, plan, tasks templates)
+✅ .pmf/memory/constitution.md (PMF-Kit v1.0.0)
+✅ .pmf/scripts/bash/ (bash automation scripts)
+✅ .pmf/scripts/powershell/ (PowerShell scripts)
+✅ .pmf/templates/ (spec, plan, tasks templates)
 ✅ .{agent}/commands/ (9 pmfkit.* commands per agent)
 ```
 

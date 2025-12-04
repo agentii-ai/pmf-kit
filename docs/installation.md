@@ -70,7 +70,7 @@ After initialization, you should see the following commands available in your AI
 - `/pmfkit.plan` - Generate implementation plans  
 - `/pmfkit.tasks` - Break down into actionable tasks
 
-The `.specify/scripts` directory will contain both `.sh` and `.ps1` scripts.
+The `.pmf/scripts` directory will contain both `.sh` and `.ps1` scripts.
 
 ## Troubleshooting
 

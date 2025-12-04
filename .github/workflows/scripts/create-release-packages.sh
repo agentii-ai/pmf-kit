@@ -32,15 +32,15 @@ rm -rf "$GENRELEASES_DIR"/* || true
 
 rewrite_paths() {
   sed -E \
-    -e 's@(/?)memory/@.specify/memory/@g' \
-    -e 's@(/?)scripts/@.specify/scripts/@g' \
-    -e 's@(/?)templates/@.specify/templates/@g'
+    -e 's@(/?)memory/@.pmf/memory/@g' \
+    -e 's@(/?)scripts/@.pmf/scripts/@g' \
+    -e 's@(/?)templates/@.pmf/templates/@g'
 }
 
 generate_commands() {
   local agent=$1 ext=$2 arg_format=$3 output_dir=$4 script_variant=$5
   mkdir -p "$output_dir"
-  for template in templates/commands/*.md; do
+  for template in .pmf/templates/commands/*.md; do
     [[ -f "$template" ]] || continue
     local name description script_command agent_script_command body
     name=$(basename "$template" .md)
@@ -136,31 +136,31 @@ build_variant() {
   local base_dir="$GENRELEASES_DIR/sdd-${agent}-package-${script}"
   echo "Building $agent ($script) package..."
   mkdir -p "$base_dir"
-  
+
   # Copy base structure but filter scripts by variant
-  SPEC_DIR="$base_dir/.specify"
+  SPEC_DIR="$base_dir/.pmf"
   mkdir -p "$SPEC_DIR"
-  
-  [[ -d memory ]] && { cp -r memory "$SPEC_DIR/"; echo "Copied memory -> .specify"; }
-  
+
+  [[ -d .pmf/memory ]] && { cp -r .pmf/memory "$SPEC_DIR/"; echo "Copied .pmf/memory -> .pmf"; }
+
   # Only copy the relevant script variant directory
-  if [[ -d scripts ]]; then
+  if [[ -d .pmf/scripts ]]; then
     mkdir -p "$SPEC_DIR/scripts"
     case $script in
       sh)
-        [[ -d scripts/bash ]] && { cp -r scripts/bash "$SPEC_DIR/scripts/"; echo "Copied scripts/bash -> .specify/scripts"; }
+        [[ -d .pmf/scripts/bash ]] && { cp -r .pmf/scripts/bash "$SPEC_DIR/scripts/"; echo "Copied .pmf/scripts/bash -> .pmf/scripts"; }
         # Copy any script files that aren't in variant-specific directories
-        find scripts -maxdepth 1 -type f -exec cp {} "$SPEC_DIR/scripts/" \; 2>/dev/null || true
+        find .pmf/scripts -maxdepth 1 -type f -exec cp {} "$SPEC_DIR/scripts/" \; 2>/dev/null || true
         ;;
       ps)
-        [[ -d scripts/powershell ]] && { cp -r scripts/powershell "$SPEC_DIR/scripts/"; echo "Copied scripts/powershell -> .specify/scripts"; }
+        [[ -d .pmf/scripts/powershell ]] && { cp -r .pmf/scripts/powershell "$SPEC_DIR/scripts/"; echo "Copied .pmf/scripts/powershell -> .pmf/scripts"; }
         # Copy any script files that aren't in variant-specific directories
-        find scripts -maxdepth 1 -type f -exec cp {} "$SPEC_DIR/scripts/" \; 2>/dev/null || true
+        find .pmf/scripts -maxdepth 1 -type f -exec cp {} "$SPEC_DIR/scripts/" \; 2>/dev/null || true
         ;;
     esac
   fi
-  
-  [[ -d templates ]] && { mkdir -p "$SPEC_DIR/templates"; find templates -type f -not -path "templates/commands/*" -not -name "vscode-settings.json" -exec cp --parents {} "$SPEC_DIR"/ \; ; echo "Copied templates -> .specify/templates"; }
+
+  [[ -d .pmf/templates ]] && { mkdir -p "$SPEC_DIR/templates"; (cd .pmf && find templates -type f -not -path "templates/commands/*" -not -name "vscode-settings.json" -exec cp --parents {} "$SPEC_DIR"/ \;) ; echo "Copied .pmf/templates -> .pmf/templates"; }
   
   # NOTE: We substitute {ARGS} internally. Outward tokens differ intentionally:
   #   * Markdown/prompt (claude, copilot, cursor-agent, opencode): $ARGUMENTS
@@ -182,7 +182,7 @@ build_variant() {
       generate_copilot_prompts "$base_dir/.github/agents" "$base_dir/.github/prompts"
       # Create VS Code workspace settings
       mkdir -p "$base_dir/.vscode"
-      [[ -f templates/vscode-settings.json ]] && cp templates/vscode-settings.json "$base_dir/.vscode/settings.json"
+      [[ -f .pmf/templates/vscode-settings.json ]] && cp .pmf/templates/vscode-settings.json "$base_dir/.vscode/settings.json"
       ;;
     cursor-agent)
       mkdir -p "$base_dir/.cursor/commands"

@@ -20,7 +20,7 @@ AGENTS=claude SCRIPTS=sh ./scripts/build-templates.sh v0.1.1
 
 # Extract and inspect
 unzip -d /tmp/test-template dist/templates/spec-kit-template-claude-sh-v0.1.1.zip
-ls -la /tmp/test-template/.specify/
+ls -la /tmp/test-template/.pmf/
 ls -la /tmp/test-template/.claude/commands/
 ```
 
@@ -197,7 +197,7 @@ The workflow will build 2 new variants (38 total), validate, and release.
 ### Semantic Versioning
 
 - **MAJOR (X.0.0)**: Breaking changes to template structure or constitution principles removed
-  - Example: Change directory structure from `.specify/` to `.spec/`
+  - Example: Change directory structure from `.pmf/` to `.spec/`
   - Requires manual version bump
 
 - **MINOR (0.X.0)**: New commands, new agents, new constitution principles

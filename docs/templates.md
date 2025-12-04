@@ -10,7 +10,7 @@ Each template includes:
 
 ```
 project-root/
-├── .specify/                      # Shared toolkit files
+├── .pmf/                      # Shared toolkit files
 │   ├── memory/
 │   │   └── constitution.md       # PMF-Kit constitution v1.0.0
 │   ├── scripts/

@@ -80,7 +80,7 @@ Open your AI assistant (Claude Code, Cursor, Windsurf, etc.) in the project dire
 
 ```bash
 /pmfkit.constitution    # Establish PMF-specific principles
-/pmfkit.specify         # Define what you're trying to learn
+/pmfkit.pmf         # Define what you're trying to learn
 /pmfkit.clarify         # Resolve ambiguities in your hypothesis
 /pmfkit.plan            # Create research execution plan
 /pmfkit.tasks           # Generate actionable research tasks
@@ -90,7 +90,7 @@ Open your AI assistant (Claude Code, Cursor, Windsurf, etc.) in the project dire
 ### 4. Run Your First PMF Discovery Workflow
 
 ```bash
-/pmfkit.specify Validate willingness to pay for AI-powered contract review among solo lawyers, following Harvey's market approach
+/pmfkit.pmf Validate willingness to pay for AI-powered contract review among solo lawyers, following Harvey's market approach
 ```
 
 This generates a PMF specification with:
@@ -124,7 +124,7 @@ PMF-Kit provides project templates for 18 AI coding agents, automatically downlo
 
 - **PMF-Kit Constitution v1.0.0** with 7 PMF-specific principles
 - **Workflow templates**: spec.md, plan.md, tasks.md for research documentation
-- **9 slash commands**: /pmfkit.specify, /pmfkit.plan, /pmfkit.tasks, /pmfkit.implement, /pmfkit.clarify, /pmfkit.analyze, /pmfkit.checklist, /pmfkit.taskstoissues, /pmfkit.constitution
+- **9 slash commands**: /pmfkit.pmf, /pmfkit.plan, /pmfkit.tasks, /pmfkit.implement, /pmfkit.clarify, /pmfkit.analyze, /pmfkit.checklist, /pmfkit.taskstoissues, /pmfkit.constitution
 - **Scripts**: Bash or PowerShell variants for automation
 - **Memory system**: constitution.md for project-specific principles
 
@@ -143,7 +143,7 @@ See [GitHub Releases](https://github.com/agentii-ai/pmf-kit/releases) for downlo
 
 ## 🎯 Core PMF Workflow
 
-### Phase 1: Specification (`/pmfkit.specify`)
+### Phase 1: Specification (`/pmfkit.pmf`)
 
 Define **WHAT** you're trying to learn and **WHY**:
 - Target personas (role/skill, company, tools, environment)
@@ -292,7 +292,7 @@ Verifies PMF-Kit installation and checks for required tools (git, claude, cursor
 
 ```
 pmf init ai-code-assistant
-/pmfkit.specify "Validate demand for AI-powered coding assistance among backend engineers, similar to Cursor's approach"
+/pmfkit.pmf "Validate demand for AI-powered coding assistance among backend engineers, similar to Cursor's approach"
 ```
 
 Expected artifacts:
@@ -305,7 +305,7 @@ Expected artifacts:
 
 ```
 pmf init video-generation
-/pmfkit.specify "Validate demand for text-to-video generation among YouTube creators"
+/pmfkit.pmf "Validate demand for text-to-video generation among YouTube creators"
 ```
 
 Expected artifacts:
@@ -318,7 +318,7 @@ Expected artifacts:
 
 ```
 pmf init contract-ai
-/pmfkit.specify "Validate willingness to pay for AI-powered legal analysis among solo practitioners and small law firms"
+/pmfkit.pmf "Validate willingness to pay for AI-powered legal analysis among solo practitioners and small law firms"
 ```
 
 ---
