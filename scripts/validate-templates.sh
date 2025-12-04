@@ -42,7 +42,7 @@ check_frontmatter_namespace() {
 
   # Special handling for Copilot (uses .github/agents/ structure)
   local command_search_dir="$agent_dir"
-  if [[ "$agent_dir" == *"/.github" ]]; then
+  if [[ "$(basename "$agent_dir")" == ".github" ]]; then
     if [[ -d "$agent_dir/agents" ]]; then
       command_search_dir="$agent_dir/agents"
     fi
