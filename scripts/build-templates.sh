@@ -170,17 +170,36 @@ fi
 
 echo ""
 
-# Success message
+# Validate templates before declaring success
 if [[ $zip_count -gt 0 ]]; then
-  echo "✅ Build succeeded! Next steps:"
+  echo "🔍 Validating templates..."
   echo ""
-  echo "  1. Validate templates:"
-  echo "     ./scripts/validate-templates.sh $DIST_DIR"
-  echo ""
-  echo "  2. Test with CLI:"
-  echo "     pmf init test-project --template file://$DIST_DIR/spec-kit-template-claude-sh-$VERSION.zip"
-  echo ""
-  exit 0
+
+  if ./scripts/validate-templates.sh "$DIST_DIR"; then
+    echo ""
+    echo "✅ Build and validation succeeded!"
+    echo ""
+    echo "Next steps:"
+    echo ""
+    echo "  1. Review templates in:"
+    echo "     $DIST_DIR"
+    echo ""
+    echo "  2. Test with CLI:"
+    echo "     pmf init test-project --template file://$DIST_DIR/spec-kit-template-claude-sh-$VERSION.zip"
+    echo ""
+    echo "  3. Create a release:"
+    echo "     gh release create $VERSION dist/templates/*.zip --draft --notes 'PMF-Kit $VERSION'"
+    echo ""
+    exit 0
+  else
+    echo ""
+    echo "❌ Validation failed - review errors above"
+    echo ""
+    echo "Templates were built but did not pass validation."
+    echo "Fix errors and rebuild before releasing."
+    echo ""
+    exit 1
+  fi
 else
   echo "❌ No templates were generated!"
   exit 1
