@@ -278,7 +278,7 @@ main() {
     echo "File:  $(basename "$INPUT")"
     echo ""
     ((TOTAL_VARIANTS++))
-    validate_variant "$INPUT"
+    validate_variant "$INPUT" || true  # Don't exit on validation failure
   elif [[ -d "$INPUT" ]]; then
     # Directory of ZIPs
     local zip_count=$(find "$INPUT" -maxdepth 1 -name "*.zip" -type f | wc -l)
@@ -295,7 +295,7 @@ main() {
 
     # Process each ZIP file
     for zip_file in $(find "$INPUT" -maxdepth 1 -name "*.zip" -type f | sort); do
-      validate_variant "$zip_file"
+      validate_variant "$zip_file" || true  # Don't exit on validation failure
       echo ""
     done
   else
