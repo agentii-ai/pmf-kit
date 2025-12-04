@@ -2,13 +2,9 @@ name: Create Release
 
 on:
   push:
-    branches: [ main ]
-    paths:
-      - 'memory/**'
-      - 'scripts/**'
-      - 'templates/**'
-      - '.github/workflows/**'
-  workflow_dispatch:
+    tags:
+      - 'v*'  # Only run on version tags like v0.0.4, v0.1.0, etc.
+  workflow_dispatch:  # Manual trigger still available
 
 jobs:
   release:
