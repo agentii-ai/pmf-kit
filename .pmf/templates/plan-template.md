@@ -60,7 +60,7 @@ Research progresses through PDCA cycles (Plan → Do → Check → Act) at 2-4 w
 
 ## Constitution Check *(mandatory)*
 
-Verify alignment with PMF-Kit principles (/.pmf/memory/constitution.md):
+Verify alignment with PMF-Kit principles (`.pmf/memory/constitution.md`):
 
 - [ ] **Principle I (Specification-First)**: Research questions tied to PMF spec hypotheses
 - [ ] **Principle II (Customer-Evidence-Driven)**: Direct evidence (interviews, behavior, not assumptions)
