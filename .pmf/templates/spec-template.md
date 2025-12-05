@@ -308,7 +308,7 @@ Before proceeding to research planning, we consider discovery successful when:
 
 ## Constitution Alignment *(mandatory)*
 
-Verify alignment with PMF-Kit constitution principles (/.pmf/memory/constitution.md):
+Verify alignment with PMF-Kit constitution principles (`.pmf/memory/constitution.md`):
 
 - [ ] **Principle I (Specification-First)**: Hypotheses defined before experiments
 - [ ] **Principle II (Customer-Evidence-Driven)**: Success criteria include measurable customer behavior
