@@ -32,9 +32,13 @@ rm -rf "$GENRELEASES_DIR"/* || true
 
 rewrite_paths() {
   sed -E \
-    -e 's@(/?)memory/@.pmf/memory/@g' \
-    -e 's@(/?)scripts/@.pmf/scripts/@g' \
-    -e 's@(/?)templates/@.pmf/templates/@g'
+    -e 's@(^|[[:space:]]|`)/memory/@\1.pmf/memory/@g' \
+    -e 's@(^|[[:space:]]|`)memory/@\1.pmf/memory/@g' \
+    -e 's@(^|[[:space:]]|`)/scripts/@\1.pmf/scripts/@g' \
+    -e 's@(^|[[:space:]]|`)scripts/@\1.pmf/scripts/@g' \
+    -e 's@(^|[[:space:]]|`)/templates/@\1.pmf/templates/@g' \
+    -e 's@(^|[[:space:]]|`)templates/@\1.pmf/templates/@g' \
+    -e 's@\.pmf/\.pmf/@.pmf/@g'
 }
 
 generate_commands() {
