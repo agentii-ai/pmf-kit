@@ -1,24 +1,31 @@
 <!--
 SYNC IMPACT REPORT
 ==================
-Version: 0.0.0 → 1.0.0 (INITIAL CONSTITUTION)
-Rationale: Initial constitution establishment for PMF-Kit project
+Version: 1.0.0 → 1.1.0 (OPTIMIZATION UPDATE)
+Rationale: Enhancements based on eval_*.md analysis of example constitutions, specs, plans, and tasks
 
-TEST WORKFLOW MARKER: TMPL-010 workflow test v0.1.0-rc1
-This marker is used to trigger the release workflow for testing purposes.
-After verification, this line will be reverted before the production release.
+Changes in This Version:
+- Added Principle VIII: Continuous Optimization (/pmfkit.optimize integration)
+- Enhanced Principle VI with child kit naming conventions
+- Added Multi-Agent Compatibility requirements
+- Added Metric Quality standards with quantified thresholds
+- Added Assumptions Documentation requirements
+- Added Owner Accountability requirements
+- Added Phase 6: Research Archive
+- Added Weekly PMF Review ritual requirements
+- Added Non-Goals documentation requirements
 
-Added Sections:
-- Complete constitution framework for PMF-Kit
-- 7 core principles adapted for product-market-fit discovery
-- Naming convention strategy to avoid conflicts with other *-kit variants
-- Governance and versioning framework
+Evaluation Sources:
+- examples/eval_constitution.md - Identified namespace inconsistencies, missing optimize integration
+- examples/eval_spec.md - Identified need for quantified metrics, assumptions, multi-agent testing
+- examples/eval_plan.md - Identified need for PDCA rituals, budget requirements
+- examples/eval_tasks.md - Identified need for owner assignments, archive phase
 
 Templates Requiring Updates:
-- ⚠ /templates/plan-template.md - Needs PMF-specific constitution check gates
-- ⚠ /templates/spec-template.md - Needs PMF-specific user story guidelines
-- ⚠ /templates/tasks-template.md - Needs PMF-specific task categories
-- ⚠ /.claude/commands/*.md - Need Keep old commands, this is the working commands for current spec-kit for coding agents
+- ✅ /templates/plan-template.md - Add constitution check gates + PDCA rituals
+- ✅ /templates/spec-template.md - Add assumptions + non-goals sections
+- ✅ /templates/tasks-template.md - Add owner assignments + archive phase
+- ⚠ /.claude/commands/*.md - Keep for spec-kit coding agents
 - ⚠ CLI implementation - Needs "pmf" command instead of "specify"
 
 Follow-up TODOs:
@@ -133,7 +140,7 @@ in market.
 **Requirements**:
 - CLI command MUST be `pmf` (not `specify`)
 - Package name MUST be `pmf-cli` (not `specify-cli`)
-- Slash commands MUST use `pmfkit.*` prefix (not `pmfkit.*`)
+- Slash commands MUST use `pmfkit.*` prefix (not `specify.*`)
 - Templates MUST reference correct command namespaces
 - Documentation MUST explain multi-kit installation strategy
 
@@ -148,14 +155,26 @@ pmf init <project>              # NOT: specify init
 pmf check                       # NOT: specify check
 
 # Agent commands
-/pmfkit.constitution           # NOT: /pmfkit.constitution
-/pmfkit.specify                # NOT: /pmfkit.specify
-/pmfkit.plan                   # NOT: /pmfkit.plan
-/pmfkit.tasks                  # NOT: /pmfkit.tasks
-/pmfkit.implement              # NOT: /pmfkit.implement
-/pmfkit.clarify                # NOT: /pmfkit.clarify
-/pmfkit.analyze                # NOT: /pmfkit.analyze
-/pmfkit.checklist              # NOT: /pmfkit.checklist
+/pmfkit.constitution           # NOT: /specify.constitution
+/pmfkit.specify                # NOT: /specify.specify
+/pmfkit.plan                   # NOT: /specify.plan
+/pmfkit.tasks                  # NOT: /specify.tasks
+/pmfkit.implement              # NOT: /specify.implement
+/pmfkit.clarify                # NOT: /specify.clarify
+/pmfkit.analyze                # NOT: /specify.analyze
+/pmfkit.optimize               # NEW: optimization pipeline
+```
+
+**Child Kit Naming Convention**:
+- Child kits MUST use their own namespace (e.g., `.agentii/`, `.marketing-kit/`)
+- Child kits MUST NOT use `.specify/` (reserved for upstream spec-kit)
+- Child kits MUST NOT use `.pmf/` (reserved for PMF-Kit parent)
+- Child kit commands follow: `/<kit-name>.*` pattern (e.g., `/agentiikits.plan`)
+
+**Command Hierarchy**:
+```
+/pmfkit.*                    # PMF-Kit parent commands
+/<child>-kit.*               # Child kit commands (marketing-kit, legal-kit)
 ```
 
 ### VII. Template Extensibility
@@ -173,6 +192,31 @@ kit variants.
 **Rationale**: Spec-driven development applies broadly beyond software. PMF-Kit demonstrates
 the pattern for creating specialized variants (pm-kit, pd-kit, marketing-kit,
 biz-writing-kit).
+
+### VIII. Continuous Optimization
+
+**Principle**: PMF discovery MUST incorporate systematic prompt and hypothesis
+optimization using the EVALUATE→SUGGEST→IMPROVE pipeline.
+
+**Requirements**:
+- Use `/pmfkit.optimize` at phase transitions to refine hypotheses
+- Apply multi-judge evaluation for research synthesis quality
+- Document optimization iterations in spec.md
+- A/B test messaging before major launches
+- Monitor metrics for degradation and trigger re-optimization
+
+**Rationale**: PMF discovery involves iterative refinement of not just the product
+but the research methodology itself. Systematic optimization prevents drift and
+improves learning velocity.
+
+**Implementation**:
+```bash
+# Optimization pipeline
+/pmfkit.optimize evaluate    # Score current hypotheses against evidence
+/pmfkit.optimize suggest     # Generate improvement recommendations  
+/pmfkit.optimize improve     # Apply optimizations to specs/plans
+/pmfkit.optimize validate    # A/B test optimized vs. original
+```
 
 ## PMF-Specific Quality Standards
 
@@ -199,6 +243,23 @@ biz-writing-kit).
 - Paying customers weighted more than free users
 - Recent evidence weighted more than historical
 - Consistent patterns across segments required
+
+### Metric Quality
+
+- All success metrics MUST have quantified thresholds (e.g., "≥70%", "≥4.0/5.0")
+- JTBD frequency MUST be specified (daily, weekly, monthly)
+- Willingness-to-pay MUST include price sensitivity data ($X-$Y range)
+- Retention metrics MUST specify timeframes (D7, D30)
+- Network effects MUST include correlation thresholds (R² > X)
+- Time-to-first-value (TTFW) MUST have explicit targets (e.g., "<10 min")
+
+### Multi-Agent Compatibility
+
+- Specs MUST specify target AI agents (Claude Code, Cursor, Copilot, etc.)
+- Plans MUST include multi-agent validation phase
+- Tasks MUST include agent-specific test runs (minimum 2 agents)
+- Success criteria MUST include cross-agent compatibility threshold (≥80%)
+- Workarounds for agent-specific issues MUST be documented
 
 ## Development Workflow
 
@@ -261,6 +322,57 @@ Execute tasks systematically:
 - Update specs based on learnings
 - Decide continue/pivot/kill based on criteria
 
+### Phase 6: Research Archive (Required)
+
+After each major phase:
+- De-identify interview transcripts for future reference
+- Compile quote library organized by hypothesis
+- Create internal briefing document for stakeholders
+- Archive raw data with retention policy (12 months minimum)
+- Document lessons learned for methodology improvement
+
+### Weekly PMF Review Ritual
+
+Teams MUST conduct weekly reviews with fixed agenda:
+1. **Metrics Review** (10 min): Phase-specific numbers
+2. **Learnings** (15 min): Quotes, patterns, surprises
+3. **Blockers** (10 min): Issues slowing progress
+4. **Decisions** (5 min): Pivot signals, question adjustments
+5. **Next Week** (5 min): Task assignments
+
+Output: Updated dashboard + task priorities + documented decisions
+
+### Accountability Requirements
+
+- Each spec section MUST have assigned owner
+- Each plan phase MUST have designated lead
+- Each task group MUST specify responsible role(s)
+- Weekly PMF reviews MUST have documented attendance
+- Go/No-Go decisions MUST identify decision authority
+
+### Assumptions Documentation
+
+Specs MUST include an Assumptions section documenting:
+- Platform dependencies (e.g., "GitHub will remain free/open")
+- Technology assumptions (e.g., "AI agents support structured file workflows")
+- User capability assumptions (e.g., "Users are GitHub-literate")
+- Market assumptions (e.g., "Demand for templates continues growing")
+
+Each assumption MUST specify:
+- Impact if invalidated (High/Medium/Low)
+- Validation method (how to test)
+- Contingency plan (what changes if false)
+
+### Non-Goals Documentation
+
+Specs MUST include explicit Non-Goals section:
+- What you are NOT building in this phase
+- What personas you are NOT targeting
+- What features are deferred to post-PMF
+- What methodologies you are NOT using (and why)
+
+Non-Goals MUST be reviewed at phase transitions and updated as scope evolves.
+
 ## Governance
 
 ### Amendment Procedure
@@ -312,4 +424,4 @@ This constitution MUST evolve as PMF-Kit matures:
 - Maintain consistency with upstream spec-kit innovations
 - Balance standardization with flexibility
 
-**Version**: 1.0.0 | **Ratified**: 2025-12-03 | **Last Amended**: 2025-12-03
+**Version**: 1.1.0 | **Ratified**: 2025-12-03 | **Last Amended**: 2025-12-05

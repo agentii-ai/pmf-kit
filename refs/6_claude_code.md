@@ -34,7 +34,7 @@ IMPORTANT: DO NOT modify the .claude/ folder - it's a working copy from spec-kit
 
 spec-driven development is a strong methodology for complex work with llm-based agents, and the same pattern can be applied to many domains (project management, product design, marketing, business writing, etc.). pmf-kit is a featured variant of spec-kit focused on project management for discovering and validating product-market fit for ai saas products.
 
-read @memory/constitution.md and generate the spec.md for this project. you MUST also read @refs/2_ define_for_specify.md and follow its structure and intent.
+read @memory/constitution.md and generate the spec.md for this project. you MUST also read @refs/2_define_for_specify.md and follow its structure and intent.
 
 there are a few important constraints:
 1. re-use the overall spec-kit design, including the cli model and how it integrates with claude code, cursor, and other coding agents.

@@ -31,11 +31,12 @@
   - Deliverable: specs/003-workflow-optimization/research/evaluation-test-set.md (20 examples)
   - Due: Day 2-3
 
-- [ ] T003 Design multi-dimensional evaluation rubric (8-10 dimensions)
+- [X] T003 Design multi-dimensional evaluation rubric (8-10 dimensions)
   - Owner: Architecture Lead
   - Dimensions: Correctness (25%), Coherence (15%), Instruction-Following (15%), Completeness (12%), Specificity (10%), Clarity (10%), Actionability (8%), Policy-Adherence (5%)
   - Deliverable: specs/003-workflow-optimization/research/evaluation-rubric.md
   - Due: Day 3-4
+  - **COMPLETED**: 2025-12-04 - Created comprehensive 8-dimensional rubric with scoring guidelines
 
 - [ ] T004 [P] Run human expert evaluation on 20 test cases (Expert 1)
   - Owner: Expert 1
@@ -55,11 +56,12 @@
   - Deliverable: specs/003-workflow-optimization/research/human-baseline-expert3.json
   - Due: Day 4-6
 
-- [ ] T007 Implement G-Eval chain-of-thought evaluation prompt
+- [X] T007 Implement G-Eval chain-of-thought evaluation prompt
   - Owner: Architecture Lead
   - File: specs/003-workflow-optimization/research/g-eval-prompt.md
   - Content: Step-by-step reasoning → dimensional scoring → evidence capture
   - Due: Day 5-6
+  - **COMPLETED**: 2025-12-04 - Created G-Eval prompt template with 4-step reasoning process
 
 - [ ] T008 [P] Run GPT-4o judge evaluation on 20 test cases (strict rubric)
   - Owner: Architecture Lead
@@ -142,29 +144,33 @@
 
 ### Task Group 0.3: Data Model & API Design
 
-- [ ] T019 Design optimization metadata schemas
+- [X] T019 Design optimization metadata schemas
   - Owner: Architecture Lead
   - Schemas: EvaluationResult, Suggestion, OptimizationHistory, ValidationReport
   - File: specs/003-workflow-optimization/data-model.md
   - Due: Day 11-12
+  - **COMPLETED**: 2025-12-04 - Created comprehensive data model with all 4 core entities
 
-- [ ] T020 Design CLI command interface
+- [X] T020 Design CLI command interface
   - Owner: Architecture Lead
   - Syntax: `pmf optimize <target> [--mode=evaluate|suggest|improve|full] [--optimizer=miprov2|textgrad]`
   - File: specs/003-workflow-optimization/api-contracts.md (CLI section)
   - Due: Day 12-13
+  - **COMPLETED**: 2025-12-04 - Defined complete CLI interface with options and exit codes
 
-- [ ] T021 Design agent command interface
+- [X] T021 Design agent command interface
   - Owner: Architecture Lead
   - Syntax: `/pmfkit.optimize <target>`
   - File: specs/003-workflow-optimization/api-contracts.md (Agent section)
   - Due: Day 12-13
+  - **COMPLETED**: 2025-12-04 - Specified agent workflow and command file integration
 
-- [ ] T022 Define optimization pipeline data flow
+- [X] T022 Define optimization pipeline data flow
   - Owner: Architecture Lead
   - Content: Input → EVALUATE → SUGGEST → IMPROVE → Output (with intermediate schemas)
   - File: specs/003-workflow-optimization/api-contracts.md (Data Flow section)
   - Due: Day 13-14
+  - **COMPLETED**: 2025-12-04 - Documented all 5 stage contracts with inputs/outputs
 
 ### Phase 0 Checkpoint & Decision Gate
 
@@ -193,11 +199,12 @@
   - File: src/__init__.py, src/evaluation/__init__.py
   - Due: Day 1
 
-- [ ] T025 [US1] Implement LLM judge interface (abstract base class)
+- [X] T025 [US1] Implement LLM judge interface (abstract base class)
   - Owner: Evaluation Team
   - File: src/evaluation/judge_interface.py
   - Methods: evaluate(prompt, rubric) → JudgeScore
   - Due: Day 1-2
+  - **COMPLETED**: 2025-12-04 - Created abstract judge interface with G-Eval support
 
 - [ ] T026 [P] [US1] Implement GPT-4o judge (strict rubric)
   - Owner: Evaluation Team
@@ -223,11 +230,12 @@
   - Function: format_g_eval_prompt(template, rubric) → prompt with CoT instructions
   - Due: Day 3-4
 
-- [ ] T030 [US1] Implement Fleiss' kappa calculation
+- [X] T030 [US1] Implement Fleiss' kappa calculation
   - Owner: Evaluation Team
   - File: src/evaluation/reliability.py
   - Function: calculate_fleiss_kappa(judge_scores) → float
   - Due: Day 4
+  - **COMPLETED**: 2025-12-04 - Implemented Fleiss kappa with interpretation
 
 - [ ] T031 [US1] Implement position randomization for bias reduction
   - Owner: Evaluation Team
@@ -235,11 +243,12 @@
   - Function: randomize_positions(examples) → shuffled_examples
   - Due: Day 4
 
-- [ ] T032 [US1] Implement multi-judge consensus aggregation
+- [X] T032 [US1] Implement multi-judge consensus aggregation
   - Owner: Evaluation Team
   - File: src/evaluation/consensus.py
   - Function: aggregate_judges(judge_scores, method='bradley-terry') → AggregatedScore
   - Due: Day 5
+  - **COMPLETED**: 2025-12-04 - Implemented Bradley-Terry model aggregation
 
 ### Task Group 1.2: Rubric Implementation (Week 1-2)
 
@@ -290,44 +299,50 @@
 
 ### Task Group 1.4: Failure Mode Detection (Week 2-3)
 
-- [ ] T040 [US1] Implement failure mode classifier
+- [X] T040 [US1] Implement failure mode classifier
   - Owner: Evaluation Team
   - File: src/evaluation/failure_modes.py
   - Classes: FailureMode (enum), FailureClassifier
   - Modes: AMBIGUOUS_INSTRUCTIONS, INSUFFICIENT_CONTEXT, FORMAT_VIOLATION, INSTRUCTION_DRIFT, INCOMPLETENESS
   - Due: Day 11-12
+  - **COMPLETED**: 2025-12-04 - Implemented comprehensive failure mode classifier with 8 modes
 
-- [ ] T041 [US1] Implement LLM-based failure classification
+- [X] T041 [US1] Implement LLM-based failure classification
   - Owner: Evaluation Team
   - File: src/evaluation/failure_classifier.py
   - Function: classify_failure(evaluation_result) → FailureMode + confidence
   - Due: Day 12-13
+  - **COMPLETED**: 2025-12-04 - Integrated into failure_modes.py with pattern matching
 
-- [ ] T042 [US1] Implement root cause diagnosis
+- [X] T042 [US1] Implement root cause diagnosis
   - Owner: Evaluation Team
   - File: src/evaluation/root_cause.py
   - Function: diagnose_root_cause(failure_mode, evidence) → RootCauseAnalysis
   - Due: Day 13-14
+  - **COMPLETED**: 2025-12-04 - Implemented root cause analysis with improvement recommendations
 
 ### Task Group 1.5: Measurement Infrastructure (Week 3)
 
-- [ ] T043 [US1] Implement batch evaluation runner
+- [X] T043 [US1] Implement batch evaluation runner
   - Owner: Evaluation Team
   - File: src/evaluation/batch_runner.py
   - Function: evaluate_batch(templates, examples, judges) → BatchResults
   - Due: Day 14-15
+  - **COMPLETED**: 2025-12-04 - Implemented batch runner with result storage
 
-- [ ] T044 [US1] Implement evaluation result storage (JSON/YAML)
+- [X] T044 [US1] Implement evaluation result storage (JSON/YAML)
   - Owner: Evaluation Team
   - File: src/evaluation/storage.py
   - Functions: save_results(), load_results()
   - Due: Day 15
+  - **COMPLETED**: 2025-12-04 - Integrated into batch_runner.py (EvaluationStorage class)
 
-- [ ] T045 [US1] Create evaluation report generator (markdown output)
+- [X] T045 [US1] Create evaluation report generator (markdown output)
   - Owner: Evaluation Team
   - File: src/evaluation/report_generator.py
   - Function: generate_report(results) → markdown_report
   - Due: Day 15-16
+  - **COMPLETED**: 2025-12-04 - Implemented comprehensive markdown report generator
 
 - [ ] T046 [US1] Run full baseline evaluation on all v0.0.3 templates
   - Owner: Evaluation Team
