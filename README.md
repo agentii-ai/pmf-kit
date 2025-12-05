@@ -498,12 +498,3 @@ pmf init my-product
 Let's build products customers love, with evidence guiding every decision.
 
 ---
-
-## 💬 Contact
-
-For direct communication, connect with me on WeChat:
-
-<div align="center">
-    <img src="./media/wechat.png" alt="WeChat QR Code" width="200"/>
-    <p><strong>WeChat ID:</strong> frank_uwm</p>
-</div>
