@@ -267,3 +267,200 @@ Consider:
 - Explicit assumptions section (should merge into 0_0_2)
 - Multi-agent MVP scoping (should merge into 0_0_2)
 - JTBD #3 customization focus (complements 0_0_2's discover/share focus)
+
+
+
+
+# v0.0.97
+
+
+
+
+# Evaluation: Agentii-Kit Marketplace Spec (v0.0.97) vs. [/refs/5_more/](cci:7://file:///Users/frank/kits/pmf-kit/refs/5_more:0:0-0:0) References
+
+## Rating: 8.5/10 — Strong PMF spec with partial optimization integration
+
+---
+
+## ✅ Strengths
+
+| Aspect | Assessment |
+|--------|------------|
+| **Two-Sided Personas** | Excellent—Kit Creator (Sarah) + Kit User (Marcus) + secondary (Lisa) with quantified pain profiles |
+| **JTBD with Evidence** | Strong—3 prioritized JTBDs with frequency, current workarounds, and willingness-to-pay evidence |
+| **Hero Workflows** | Excellent—Clear end-to-end flows with TTFW targets (<10 min, <5 min) and guardrails |
+| **Quantified Metrics** | Comprehensive—Activation, Engagement, Retention, AI-specific, Business, and Marketplace metrics all defined |
+| **PMF Validation** | Strong—Sean Ellis test (40%), D30 retention (30%), NPS (50) thresholds specified |
+| **Assumptions Section** | Good—5 assumptions with impact and validation methods per PMF-Kit constitution requirements |
+| **Non-Goals** | Clear—Explicit scope boundaries with "not building", "not targeting", and "deferred" categories |
+| **Constitution Alignment** | Excellent—Lines 382-395 explicitly verify alignment with all 10 principles |
+
+---
+
+## ⚠️ Gaps vs. [/refs/5_more/](cci:7://file:///Users/frank/kits/pmf-kit/refs/5_more:0:0-0:0) Optimization Pipeline
+
+### 1. **Partial `/pmfkit.optimize` Reference**
+
+The spec mentions optimization at line 410:
+```markdown
+**At phase transitions**: Run `/pmfkit.optimize` to refine personas, JTBD, and success metrics based on interview learnings
+```
+
+**Gap**: This is a good start but doesn't reference the **5-stage pipeline** (EVALUATE→SUGGEST→IMPROVE→VALIDATE→ITERATE) from the Quick Ref. It's treated as a phase-transition activity rather than a continuous methodology.
+
+**Recommendation**: Expand to include:
+```markdown
+**Optimization Pipeline**:
+- `/pmfkit.optimize evaluate` — Score spec quality against rubric before planning
+- `/pmfkit.optimize suggest` — Generate improvement recommendations from interview feedback
+- `/pmfkit.optimize validate` — A/B test Hero Workflow messaging with users
+```
+
+### 2. **Missing Multi-Judge Evaluation for Spec Quality**
+
+The refs specify evaluation should use:
+- 3-5 LLM judges with different rubrics
+- Fleiss' kappa ≥ 0.4 agreement threshold
+- Multi-dimensional rubric (correctness, coherence, completeness, etc.)
+
+**Gap**: The spec has no self-evaluation methodology. How do we know this spec is "ready" for planning?
+
+**Recommendation**: Add to "Success Criteria for Discovery Phase":
+```markdown
+- [ ] **Spec Quality Score**: `/pmfkit.optimize evaluate` returns ≥0.7 overall score
+- [ ] **Multi-Agent Review**: Spec reviewed by ≥2 AI agents with agreement threshold met
+```
+
+### 3. **Missing Failure Mode Taxonomy**
+
+The Quick Ref defines 8 failure modes for agentic systems:
+- Hallucination, Instruction Drift, Tool Misuse, Reasoning Error
+- Format Violation, Incomplete Response, Goal Abandonment, Infinite Loop
+
+**Gap**: The spec has "Guardrails & Error Recovery" for Hero Workflows (lines 145-148, 168-171) but no systematic failure taxonomy.
+
+**Good start at line 145-148**:
+```markdown
+**Guardrails & Error Recovery**:
+- **What breaks the workflow?**: Kit is incomplete (missing files), GitHub fork fails...
+- **How do users recover?**: Fallback to manual GitHub fork...
+```
+
+**Recommendation**: Map to optimization pipeline failure modes:
+```markdown
+### Spec Failure Modes (for `/pmfkit.optimize evaluate`)
+| Failure Mode | Spec Equivalent | Detection |
+|--------------|-----------------|-----------|
+| Incomplete Response | Missing persona details | Checklist validation |
+| Instruction Drift | JTBD doesn't match persona pain | Cross-reference check |
+| Format Violation | Metrics lack quantified thresholds | Schema validation |
+```
+
+### 4. **Missing Continuous Optimization Cadence**
+
+The refs emphasize **weekly review rituals** and **continuous monitoring**:
+- Weekly metrics review (10 min)
+- Degradation detection triggers reoptimization
+- A/B testing before major changes
+
+**Gap**: The spec has "Success Criteria for Discovery Phase" (lines 341-350) as a one-time checklist, not a continuous process.
+
+**Recommendation**: Add to Next Steps:
+```markdown
+### Weekly Discovery Review (per constitution)
+1. **Interview Synthesis** (10 min): New quotes, pattern updates
+2. **Metrics Check** (10 min): Which assumptions validated/invalidated?
+3. **Spec Optimization** (10 min): Run `/pmfkit.optimize suggest` on learnings
+4. **Next Week** (5 min): Interview schedule, blockers
+```
+
+### 5. **Multi-Agent Testing Not Detailed**
+
+Lines 233-238 mention multi-agent compatibility:
+```markdown
+### Multi-Agent Compatibility
+- **Target agents**: Claude Code (primary), Cursor (secondary), GitHub Copilot (tertiary)
+- **Compatibility threshold**: ≥80% of kits must work across Claude Code + Cursor
+- **Testing approach**: Kit creators run test workflow with ≥2 agents before submission
+```
+
+**Gap**: No reference to the evaluation methodology from refs (multi-judge, agreement thresholds, diagnostic feedback).
+
+**Recommendation**: Add per Quick Ref lines 50-67:
+```markdown
+### Multi-Agent Evaluation Methodology
+- Automated kit validation MUST use ≥2 LLM judges
+- Inter-judge agreement MUST achieve Fleiss' kappa ≥ 0.4
+- Failed validations MUST include diagnostic suggestions (per `/pmfkit.optimize suggest`)
+```
+
+---
+
+## Specific Line-Level Issues
+
+| Line | Issue | Severity |
+|------|-------|----------|
+| 401-410 | "Next Steps" references `/pmfkit.optimize` but only at phase transitions | Medium |
+| 341-350 | Success criteria is one-time checklist, no iteration cadence | Medium |
+| 233-238 | Multi-agent testing lacks evaluation methodology details | Medium |
+| 382-395 | Constitution alignment checklist doesn't include Principle XI (missing in constitution too) | Low |
+
+---
+
+## ✅ What's Done Well (Beyond Requirements)
+
+### Excellent Quantified Metrics (Lines 175-219)
+
+The spec exceeds PMF-Kit requirements with comprehensive, measurable thresholds:
+
+| Metric Category | Example Metric | Threshold |
+|-----------------|----------------|-----------|
+| Activation | Visitors completing Hero Workflow 1 | ≥15% |
+| Engagement | Kits forked per active user/month | ≥2 |
+| Retention | D7 retention for kit forkers | ≥30% |
+| AI-Specific | Kits with multi-agent compatibility | ≥80% |
+| Marketplace | Creator-to-user ratio | 1:10 to 1:20 |
+| PMF Validation | Sean Ellis "very disappointed" | ≥40% |
+
+This aligns perfectly with PMF-Kit constitution "Metric Quality" requirements (quantified thresholds, timeframes, correlation targets).
+
+### Strong Assumptions Section (Lines 263-271)
+
+Meets constitution requirement for assumptions with:
+- Impact if invalidated (High/Medium)
+- Validation method
+- Contingency implied
+
+### Excellent Non-Goals (Lines 275-294)
+
+Three-tier structure:
+1. **Not building in this phase** (scope)
+2. **Not targeting** (personas)
+3. **Deferred to post-PMF** (roadmap)
+
+---
+
+## Verdict
+
+| Category | Rating |
+|----------|--------|
+| **Persona Depth** | ✅ Excellent—Quantified pain, frequency, workarounds |
+| **JTBD Quality** | ✅ Strong—Evidence-based, prioritized |
+| **Hero Workflows** | ✅ Excellent—TTFW targets, guardrails, error recovery |
+| **Metrics** | ✅ Comprehensive—Exceeds requirements |
+| **Optimization Integration** | ⚠️ Partial—Referenced but not methodologically detailed |
+| **Continuous Improvement** | ⚠️ Missing—No weekly review cadence |
+| **Multi-Agent Evaluation** | ⚠️ Partial—Thresholds defined, methodology missing |
+
+**Overall**: 8.5/10 — One of the stronger specs I've evaluated. Main gap is expanding the `/pmfkit.optimize` integration from a phase-transition checkpoint to a continuous methodology per refs/5_more.
+
+---
+
+## Recommended Additions
+
+| Priority | Action |
+|----------|--------|
+| **P1** | Expand `/pmfkit.optimize` reference to include 5-stage pipeline |
+| **P2** | Add weekly discovery review ritual to Next Steps |
+| **P2** | Add multi-agent evaluation methodology (judges, agreement thresholds) |
+| **P3** | Add spec failure mode taxonomy mapped to optimization pipeline |

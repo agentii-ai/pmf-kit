@@ -273,3 +273,252 @@ These task files are **complementary**:
 **Unique contributions to preserve**:
 - **0_0_2**: Critical path analysis, weekly PMF reviews, MVP scope definition
 - **0_0_3**: Hypothesis-organized sections, owner assignments, archive phase, multi-agent testing
+
+
+# v0.0.97
+
+
+
+
+# Evaluation: Agentii-Kit Marketplace Tasks (v0.0.97) vs. [/refs/5_more/](cci:7://file:///Users/frank/kits/pmf-kit/refs/5_more:0:0-0:0) References
+
+## Rating: 9/10 — Excellent task breakdown with strong traceability, minor optimization gaps
+
+---
+
+## ✅ Strengths
+
+| Aspect | Assessment |
+|--------|------------|
+| **Task Granularity** | Excellent—65 tasks with unique IDs (T001-T065), clear descriptions, and file output paths |
+| **Research Question Mapping** | Strong—Every task tagged with `[RQ#]` linking to specific research questions |
+| **Parallel Execution** | Well-structured—`[P]` markers identify 25 parallelizable tasks across phases |
+| **Phase Structure** | Clear—3 phases with explicit exit criteria, decision gates, and team allocations |
+| **Checkpoint Tasks** | Complete—Dedicated checkpoint tasks (T010, T014, T015, T032, T055) enable mid-phase course correction |
+| **Artifact Documentation** | Comprehensive—All outputs have explicit file paths under `research-artifacts/` |
+| **Dependency Documentation** | Clear—Lines 334-346 map sequential and within-phase dependencies |
+
+---
+
+## ✅ `/pmfkit.optimize` Integration
+
+The tasks correctly reference optimization at the decision gate (T065, line 310):
+
+```markdown
+- **ITERATE**: Weak PMF signals → Run `/pmfkit.optimize` to refine hypotheses; A/B test UX improvements
+```
+
+This aligns with the plan.md and positions optimization as a failure recovery mechanism.
+
+---
+
+## ⚠️ Gaps vs. [/refs/5_more/](cci:7://file:///Users/frank/kits/pmf-kit/refs/5_more:0:0-0:0) Optimization Pipeline
+
+### 1. **No Explicit Optimization Tasks**
+
+The tasks reference `/pmfkit.optimize` only in the decision gate description (T065) but don't include dedicated optimization tasks.
+
+**Gap**: No tasks for running the 5-stage pipeline (EVALUATE→SUGGEST→IMPROVE→VALIDATE→ITERATE).
+
+**Recommendation**: Add Phase 1 optimization checkpoint task:
+```markdown
+- [ ] T027.1 [RQ1] If Phase 1 PIVOT: Run `/pmfkit.optimize evaluate` on interview synthesis
+  - Score synthesis quality against multi-judge rubric
+  - Generate persona refinement suggestions via `/pmfkit.optimize suggest`
+  - Output: Updated interview guide + refined personas in `research-artifacts/optimization/phase-1-optimize.md`
+```
+
+### 2. **Missing Multi-Reviewer Validation for Synthesis Tasks**
+
+The refs specify (pmfkit_optimize_guide.md lines 98-155):
+- Multi-judge consensus for evaluation reliability
+- Fleiss' kappa ≥ 0.4 inter-rater agreement
+
+**Gap**: Synthesis tasks (T017, T018, T034) have single-owner analysis with no peer review validation.
+
+**Current** (T017, lines 91-93):
+```markdown
+- [ ] T017 [RQ1] Create JTBD synthesis document at `specs/001-marketplace-platform/research-artifacts/analysis/jtbd-synthesis.md`
+  - Content: Top 3 JTBD with verbatim quotes, mention rates (%), frequency data
+  - Calculate: % personas reporting pain ≥2 hrs/week
+```
+
+**Recommendation**: Add validation step:
+```markdown
+- [ ] T017 [RQ1] Create JTBD synthesis document...
+  - **Validation**: 2+ team members independently code interviews; calculate inter-rater agreement ≥0.6
+  - If agreement <0.6: Reconcile differences before proceeding
+```
+
+### 3. **Missing Failure Mode Checklist for Synthesis Quality**
+
+The refs define 8 failure modes. Research synthesis could fail analogously:
+
+| Agentic Failure Mode | Research Equivalent |
+|---------------------|---------------------|
+| Hallucination | Asserting patterns not in interview data |
+| Incomplete Response | Missing persona segments |
+| Format Violation | Metrics lack quantified thresholds |
+
+**Gap**: No synthesis quality checklist in T017-T021 or T034-T037.
+
+**Recommendation**: Add to Phase 1 Week 4:
+```markdown
+- [ ] T017.1 [RQ1] Validate JTBD synthesis quality checklist:
+  - [ ] No patterns asserted without ≥3 supporting quotes
+  - [ ] All 3 personas (Sarah, Marcus, Lisa) represented
+  - [ ] All metrics include quantified thresholds (not "most users")
+  - [ ] Conclusions traceable to spec.md hypotheses
+```
+
+### 4. **Missing A/B Testing Tasks for Channel Optimization**
+
+The refs emphasize A/B testing (pmfkit_optimize_quick_ref.md lines 386-416):
+- Staged rollout (staging → 10% → 100%)
+- Statistical significance (p < 0.05)
+- Minimum samples per variant
+
+**Gap**: Phase 3 channel tasks (T049-T052) use UTM tracking but no explicit A/B test tasks for messaging optimization.
+
+**Recommendation**: Add to Phase 3 Week 9:
+```markdown
+- [ ] T049.1 [RQ9] Run `/pmfkit.optimize validate` on Product Hunt messaging
+  - Variants: Problem-led messaging ("Tired of blank pages?") vs. Solution-led ("Fork to Work")
+  - Traffic split: 50/50 via separate landing pages
+  - Success threshold: p < 0.05, ≥100 visitors per variant
+  - Output: `research-artifacts/optimization/channel-messaging-abtest.md`
+```
+
+### 5. **Missing Optimization Trigger in Weekly PMF Reviews**
+
+T053 (lines 256-259) defines weekly PMF reviews but doesn't include optimization triggers:
+
+**Current**:
+```markdown
+- [ ] T053 [RQ8] [RQ9] Weekly PMF Review (every Monday, 45 min)
+  - Agenda: Metrics review (10 min), learnings (15 min), blockers (10 min), decisions (5 min), next week (5 min)
+```
+
+**Recommendation**: Add optimization trigger to agenda:
+```markdown
+  - Agenda: Metrics review (10 min), learnings (15 min), blockers (10 min), **optimization check (5 min)**, decisions (5 min)
+  - Optimization triggers:
+    - Any metric dropped >10% from prior week → Add `/pmfkit.optimize evaluate` task
+    - 2+ interviews contradicted hypothesis → Add `/pmfkit.optimize suggest` task
+```
+
+### 6. **No Phase 6: Research Archive Tasks**
+
+PMF-Kit constitution v1.1.0 requires a Research Archive phase (lines 325-332):
+- De-identify interview transcripts
+- Compile quote library organized by hypothesis
+- Archive raw data with retention policy (12 months minimum)
+
+**Gap**: No archive tasks after Phase 3 completion.
+
+**Recommendation**: Add Phase 4 (Post-PMF):
+```markdown
+## Phase 4: Research Archive (1 week)
+
+- [ ] T066 De-identify interview transcripts (remove PII) and archive in `research-artifacts/archive/interviews/`
+- [ ] T067 Compile quote library organized by JTBD in `research-artifacts/archive/quote-library.md`
+- [ ] T068 Archive raw data (recordings, spreadsheets) with 12-month retention policy
+- [ ] T069 Create internal briefing document summarizing PMF learnings for stakeholders
+```
+
+---
+
+## Specific Line-Level Issues
+
+| Line | Issue | Severity |
+|------|-------|----------|
+| 91-93 | T017 synthesis lacks multi-reviewer validation | Medium |
+| 168-170 | T034 usability synthesis lacks quality checklist | Medium |
+| 240-252 | T049-T052 channel launches lack A/B test protocol | Medium |
+| 256-259 | T053 weekly review lacks optimization trigger | Low |
+| 310 | T065 references `/pmfkit.optimize` but no dedicated task | Low |
+| — | Missing Phase 4: Research Archive tasks | Medium |
+
+---
+
+## ✅ What's Done Exceptionally Well
+
+### 1. Task ID + Research Question Mapping (Throughout)
+
+Every task has:
+- Unique ID (T001-T065)
+- Research question tag `[RQ#]`
+- Parallel marker `[P]` where applicable
+
+Example (T007, lines 60-63):
+```markdown
+- [ ] T007 [P] [RQ1] Conduct interviews batch 1 (4-5 interviews) and save notes in `specs/001-marketplace-platform/research-artifacts/interviews/batch-1/`
+  - Duration: 45-60 min per interview
+  - Protocol: See `research-instruments.md` → Interview Guide #1
+  - Record: Pain frequency, current workarounds, WTP signals, verbatim quotes
+```
+
+This enables audit trail from task → research question → spec hypothesis.
+
+### 2. Checkpoint Tasks with Explicit Decisions (Lines 69-71, 82-85, 161-162)
+
+Mid-phase checkpoints embedded in task list:
+```markdown
+- [ ] T010 [RQ1] Checkpoint: Review batch 1 interview notes for JTBD patterns
+  - Question: Are pain patterns emerging? Is pain frequency ≥70%?
+  - Decision: Continue / adjust interview questions / extend recruitment
+```
+
+### 3. Parallel Execution Documentation (Lines 315-330)
+
+Clear guidance on which tasks can run concurrently:
+```markdown
+**Phase 1 (Weeks 1-4)**:
+- Week 1: T001 (screener), T002 (recruiting list), T005 (seed kits), T006 (compatibility matrix) can run in parallel
+```
+
+### 4. Complete Artifact Paths (Throughout)
+
+Every synthesis task specifies output file path:
+```markdown
+- [ ] T017 [RQ1] Create JTBD synthesis document at `specs/001-marketplace-platform/research-artifacts/analysis/jtbd-synthesis.md`
+```
+
+### 5. Task Summary Statistics (Lines 370-389)
+
+Clear overview:
+- **65 tasks** across 3 phases
+- **25 parallelizable** tasks marked `[P]`
+- **Checkpoint validation** references `validation-checkpoints.md`
+
+---
+
+## Verdict
+
+| Category | Rating |
+|----------|--------|
+| **Task Granularity** | ✅ Excellent—65 tasks with IDs and output paths |
+| **Research Question Mapping** | ✅ Complete—All tasks tagged `[RQ#]` |
+| **Parallel Execution** | ✅ Strong—25 tasks marked `[P]` with dependency docs |
+| **Phase Gates** | ✅ Clear—GO/PIVOT/KILL per phase |
+| **Optimization Integration** | ⚠️ Partial—Referenced in T065 but no dedicated tasks |
+| **Multi-Reviewer Validation** | ❌ Missing—Synthesis has single-owner analysis |
+| **A/B Testing Tasks** | ⚠️ Missing—UTM tracking but no messaging optimization |
+| **Research Archive** | ❌ Missing—No Phase 4 archive tasks |
+
+**Overall**: 9/10 — Excellent task breakdown with strong traceability and parallel execution guidance. Main gaps: add explicit optimization tasks, multi-reviewer validation for synthesis, A/B testing protocol, and research archive phase.
+
+---
+
+## Recommended Additions
+
+| Priority | Action |
+|----------|--------|
+| **P1** | Add multi-reviewer validation to synthesis tasks (T017, T018, T034) |
+| **P1** | Add synthesis quality checklist (no hallucination, complete coverage) |
+| **P2** | Add explicit `/pmfkit.optimize` tasks for Phase 1 PIVOT path |
+| **P2** | Add A/B testing tasks for Phase 3 channel messaging |
+| **P2** | Add Phase 4: Research Archive tasks (de-identification, quote library) |
+| **P3** | Add optimization trigger to T053 weekly review agenda |
+
+

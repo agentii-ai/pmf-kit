@@ -188,3 +188,163 @@ These two constitutions appear to describe the **same project** (agentii-kit) bu
 | **0_0_3** | 8.5/10 | Solid platform infrastructure with namespace inconsistencies and weak PMF methodology |
 
 Both demonstrate strong understanding of the spec-kit pattern and creative adaptation to a marketplace domain. Main gaps are namespace consistency and ensuring PMF principles aren't lost during platform abstraction.
+
+
+
+
+# v0.0.97
+
+
+# Evaluation: Agentii-Kit Constitution (v2.0.0) vs. `/pmfkit.optimize` References
+
+## Summary
+
+The new Agentii-Kit constitution is a **complete domain pivot** from PMF discovery to marketplace platform. It's well-structured but **missing optimization pipeline integration** that the refs/5_more materials describe.
+
+---
+
+## ✅ Strengths
+
+| Aspect | Assessment |
+|--------|------------|
+| **Two-Sided Marketplace Thinking** | Excellent—Principle I explicitly requires provider+user impact on all features |
+| **Quality Standards** | Strong—Principle II defines concrete thresholds (4 core files, ≥2 agents, license requirements) |
+| **Quantified Metrics** | Good—Provider reputation scoring (lines 274-287), user success metrics (lines 291-303) |
+| **Namespace Isolation** | Correct—Uses `agentiikits.*` prefix per AGENTS.md guidelines |
+| **GitHub-Native Architecture** | Strong—Principle V correctly positions platform as discovery layer, not content host |
+| **Accessibility** | Good—Principle X addresses non-developer users (marketers, PMs, lawyers) |
+
+---
+
+## ⚠️ Gaps vs. [/refs/5_more/](cci:7://file:///Users/frank/kits/pmf-kit/refs/5_more:0:0-0:0) Optimization Pipeline
+
+### 1. **No `/agentiikits.optimize` Command**
+
+The constitution lists these commands (lines 215-221):
+- `/agentiikits.constitution`
+- `/agentiikits.specify`
+- `/agentiikits.plan`
+- `/agentiikits.tasks`
+- `/agentiikits.implement`
+
+**Missing**: No `/agentiikits.optimize` command for the EVALUATE→SUGGEST→IMPROVE→VALIDATE→ITERATE pipeline.
+
+**Recommendation**: Add to Principle IX (Namespace Isolation):
+```markdown
+- `/agentiikits.optimize evaluate`  # Score kit quality against rubric
+- `/agentiikits.optimize suggest`   # Generate improvement recommendations
+- `/agentiikits.optimize improve`   # Apply optimizations to templates
+- `/agentiikits.optimize validate`  # A/B test with users
+- `/agentiikits.optimize iterate`   # Continuous monitoring
+```
+
+### 2. **Missing Multi-Judge Evaluation for Kit Quality**
+
+The refs specify (pmfkit_optimize_quick_ref.md lines 50-67):
+- 3-5 judges with different models/rubrics
+- Fleiss' kappa ≥ 0.4 agreement threshold
+- Bradley-Terry aggregation
+
+**Constitution gap**: Kit Quality Standards (Principle II) lists requirements but no **automated evaluation methodology**.
+
+**Recommendation**: Add to "Marketplace Quality Standards" section:
+```markdown
+### Kit Quality Evaluation Pipeline
+- Automated validation MUST use ≥2 LLM judges
+- Inter-rater agreement MUST achieve Fleiss' kappa ≥ 0.4
+- Failed evaluations MUST include diagnostic feedback
+```
+
+### 3. **Missing Failure Mode Taxonomy**
+
+The refs define 8 failure categories:
+- Hallucination, Instruction Drift, Tool Misuse, Reasoning Error
+- Format Violation, Incomplete Response, Goal Abandonment, Infinite Loop
+
+**Constitution gap**: "Kit Removal Criteria" (lines 378-383) covers policy violations but not **quality failure modes** for kit templates.
+
+**Recommendation**: Add kit-specific failure taxonomy:
+```markdown
+### Kit Quality Failure Modes
+- **Incomplete Templates**: Missing required sections
+- **Ambiguous Placeholders**: Unclear what to customize
+- **Agent Incompatibility**: Fails on ≥2 tested agents
+- **Stale Documentation**: README doesn't match templates
+- **Broken Examples**: Example use cases don't execute
+```
+
+### 4. **Missing Continuous Optimization Principle**
+
+PMF-Kit constitution v1.1.0 had **Principle VIII: Continuous Optimization** requiring:
+- Use `/pmfkit.optimize` at phase transitions
+- Multi-judge evaluation for research synthesis
+- A/B test messaging before launches
+- Monitor metrics for degradation
+
+**Constitution gap**: Agentii-Kit has no equivalent principle for kit quality optimization.
+
+**Recommendation**: Add **Principle XI: Continuous Kit Optimization**:
+```markdown
+### XI. Continuous Kit Optimization
+
+**Principle**: Kit quality MUST be continuously measured and improved using systematic evaluation pipelines.
+
+**Requirements**:
+- Platform MUST run `/agentiikits.optimize evaluate` on new submissions
+- Low-scoring kits MUST receive `/agentiikits.optimize suggest` feedback
+- Kit updates MUST pass regression testing before sync
+- Platform MUST monitor kit effectiveness metrics (completion rate, user rating)
+- Degrading kits MUST trigger provider notifications
+```
+
+### 5. **Missing Weekly Review Ritual**
+
+PMF-Kit v1.1.0 required weekly PMF reviews (lines 334-343).
+
+**Constitution gap**: No equivalent operational cadence for marketplace health monitoring.
+
+**Recommendation**: Add to Phase 6 (Launch & Iteration):
+```markdown
+### Weekly Marketplace Review
+Teams MUST conduct weekly reviews:
+1. **Supply Health** (10 min): New kits, provider churn, quality scores
+2. **Demand Health** (10 min): Downloads, forks, user retention
+3. **Quality Issues** (10 min): Flagged kits, removal appeals
+4. **Optimization** (10 min): A/B test results, algorithm tuning
+5. **Next Week** (5 min): Priorities and blockers
+```
+
+---
+
+## Specific Line-Level Issues
+
+| Line | Issue | Severity |
+|------|-------|----------|
+| 215-221 | Missing `/agentiikits.optimize` in command list | High |
+| 256-267 | Kit Submission Requirements lack automated validation methodology | Medium |
+| 339-346 | Phase 4 mentions "Testing (multi-agent compatibility)" but no evaluation rubric | Medium |
+| 378-383 | Kit Removal Criteria policy-focused, not quality-focused | Low |
+
+---
+
+## Verdict
+
+| Category | Rating |
+|----------|--------|
+| **Domain Adaptation** | ✅ Excellent—clean pivot to marketplace |
+| **Marketplace Principles** | ✅ Strong—two-sided thinking embedded |
+| **Quality Standards** | ⚠️ Partial—thresholds defined, but no evaluation pipeline |
+| **Optimization Integration** | ❌ Missing—no `/agentiikits.optimize` workflow |
+| **Operational Cadence** | ⚠️ Partial—no weekly review ritual |
+
+**Overall**: 7/10 — Solid marketplace constitution, needs optimization pipeline integration from refs/5_more.
+
+---
+
+## Recommended Additions
+
+1. **Add Principle XI**: Continuous Kit Optimization (highest priority)
+2. **Add `/agentiikits.optimize` commands** to Namespace section
+3. **Add Kit Quality Evaluation Pipeline** with multi-judge requirements
+4. **Add Kit Failure Mode Taxonomy** 
+5. **Add Weekly Marketplace Review** ritual

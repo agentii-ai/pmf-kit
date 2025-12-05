@@ -232,3 +232,227 @@ Neither plan currently references this pipeline, which is a missed opportunity f
 **Winner for production use**: 0_0_2 — more complete, actionable, and ready for execution.
 
 **0_0_3's unique contribution**: Multi-agent compatibility testing (H4.1) should be merged into 0_0_2.
+
+
+# v0.0.97
+
+
+
+
+# Evaluation: Agentii-Kit Marketplace Plan (v0.0.97) vs. [/refs/5_more/](cci:7://file:///Users/frank/kits/pmf-kit/refs/5_more:0:0-0:0) References
+
+## Rating: 9.5/10 — Exceptional PMF research plan with strong optimization integration
+
+---
+
+## ✅ Strengths
+
+| Aspect | Assessment |
+|--------|------------|
+| **Research Questions** | Excellent—9 prioritized questions with hypotheses, success thresholds, evidence sources, and document references |
+| **PDCA Cycles** | Strong—Explicit Plan→Do→Check→Act rhythm at 4-week, 3-week, and 6-8-week intervals |
+| **Phase Exit Criteria** | Comprehensive—GO/PIVOT/KILL decisions with quantified thresholds per phase |
+| **Constitution Check** | Complete—All 10 principles explicitly verified with mappings to research questions |
+| **Budget & Resources** | Detailed—$1,500 budget, team allocation table, tools/platforms listed |
+| **Risk Mitigation** | Strong—6 risks with impact, mitigation, AND fallback plans |
+| **Accountability** | Clear—Phase owners, checkpoint authority, weekly review attendance requirements |
+| **Assumptions Table** | Complete—5 assumptions with impact, validation method, and contingency plans |
+
+---
+
+## ✅ Strong `/pmfkit.optimize` Integration
+
+Unlike the earlier specs and constitutions, this plan **correctly integrates** the optimization pipeline in multiple places:
+
+### 1. Risk Mitigation (Line 165)
+```markdown
+| **Low retention** (D7 <20%) | High | Run `/pmfkit.optimize` to refine UX/positioning; interview churned users; A/B test improvements |
+```
+
+### 2. Phase 3 Decision Gate (Lines 401-403)
+```markdown
+**Decision**:
+- **SCALE**: PMF achieved → Invest in growth...
+- **ITERATE**: Weak PMF signals → Run `/pmfkit.optimize` to refine hypotheses; A/B test UX improvements
+- **PIVOT**: No PMF → Major pivot required
+```
+
+### 3. Next Steps – Failure Path (Lines 492-495)
+```markdown
+**If Phase 1 Fails**:
+- Run `/pmfkit.optimize` to refine hypotheses
+- Conduct 5-10 additional interviews with adjusted personas
+```
+
+### 4. Phase Transitions (Lines 497-500)
+```markdown
+**At Phase Transitions**:
+- Run `/pmfkit.optimize` to refine personas, JTBD, and success metrics based on learnings
+- Update constitution if thresholds need adjustment
+```
+
+**This is excellent**—the plan correctly positions `/pmfkit.optimize` as a tool for hypothesis refinement when data invalidates assumptions.
+
+---
+
+## ⚠️ Minor Gaps vs. [/refs/5_more/](cci:7://file:///Users/frank/kits/pmf-kit/refs/5_more:0:0-0:0) Optimization Pipeline
+
+### 1. **Optimization Pipeline Stages Not Fully Specified**
+
+The plan references `/pmfkit.optimize` but doesn't specify the **5-stage pipeline**:
+- EVALUATE → SUGGEST → IMPROVE → VALIDATE → ITERATE
+
+**Current**: Generic "run `/pmfkit.optimize` to refine hypotheses"
+
+**Recommendation**: Expand to include specific stages:
+```markdown
+**If Phase 1 Fails**:
+- Run `/pmfkit.optimize evaluate` — Score interview synthesis quality against rubric
+- Run `/pmfkit.optimize suggest` — Generate persona refinement recommendations
+- Run `/pmfkit.optimize improve` — Apply optimizations to interview guide
+- Re-run 5-10 interviews with improved protocol
+```
+
+### 2. **Missing Multi-Judge Evaluation for Interview Synthesis**
+
+The refs specify (pmfkit_optimize_guide.md lines 98-155):
+- Multi-judge consensus for evaluation reliability
+- Fleiss' kappa ≥ 0.4 inter-rater agreement
+- Bradley-Terry aggregation
+
+**Gap**: Interview synthesis (T1.14-T1.16) has no multi-reviewer validation methodology.
+
+**Recommendation**: Add to Phase 1 synthesis tasks:
+```markdown
+- [ ] **T1.14** Create JTBD synthesis document → `research-artifacts/analysis/jtbd-synthesis.md`
+  - **Validation**: 2+ team members independently code interviews; calculate inter-rater agreement ≥0.6
+```
+
+### 3. **Missing Failure Mode Detection for Research Quality**
+
+The refs define 8 failure modes (pmfkit_optimize_quick_ref.md lines 112-123). Research synthesis could fail in analogous ways:
+
+| Agentic Failure Mode | Research Equivalent |
+|---------------------|---------------------|
+| Hallucination | Synthesizing patterns not in data |
+| Instruction Drift | Research questions diverge from spec hypotheses |
+| Incomplete Response | Missing persona segments in synthesis |
+| Format Violation | Metrics lack quantified thresholds |
+
+**Recommendation**: Add to Phase 1 synthesis:
+```markdown
+### Phase 1 Synthesis Quality Checklist
+- [ ] No patterns asserted without ≥3 supporting quotes
+- [ ] All 3 personas represented in synthesis
+- [ ] Metrics include quantified thresholds (not "most users")
+- [ ] Cross-reference: Synthesis conclusions traceable to spec.md hypotheses
+```
+
+### 4. **Weekly PMF Review Could Include Optimization Cadence**
+
+The Weekly PMF Review ritual (lines 413-427) is excellent but could integrate optimization triggers:
+
+**Current**: Generic "learnings" and "decisions" sections
+
+**Recommendation**: Add explicit optimization trigger:
+```markdown
+4. **Optimization Check** (5 min): 
+   - Did any metric drop >10% from prior week? → Trigger `/pmfkit.optimize evaluate`
+   - Did 2+ interviews contradict hypothesis? → Trigger `/pmfkit.optimize suggest`
+```
+
+### 5. **Phase 3 Channel Optimization Missing A/B Testing Details**
+
+The refs emphasize A/B testing (pmfkit_optimize_quick_ref.md lines 386-416):
+- Staged rollout (staging → 10% → 100%)
+- Statistical significance (p < 0.05)
+- Minimum samples per variant
+
+**Gap**: Phase 3 channel testing (T3.5-T3.8) mentions UTM tracking but no A/B test methodology for messaging optimization.
+
+**Recommendation**: Add to Phase 3:
+```markdown
+- [ ] **T3.14** [P] Run `/pmfkit.optimize validate` on landing page copy
+  - Variants: Problem-led messaging vs. Solution-led messaging
+  - Traffic split: 50/50 per channel
+  - Success threshold: p < 0.05, ≥100 visitors per variant
+```
+
+---
+
+## Specific Line-Level Issues
+
+| Line | Issue | Severity |
+|------|-------|----------|
+| 165, 402, 493-494, 498 | `/pmfkit.optimize` referenced but 5-stage pipeline not specified | Low |
+| 228-234 | Interview synthesis lacks multi-reviewer validation | Medium |
+| 371-389 | Phase 3 behavioral tracking comprehensive, but missing A/B test protocol | Medium |
+| 419-424 | Weekly review agenda excellent, could add optimization trigger | Low |
+
+---
+
+## ✅ What's Done Exceptionally Well
+
+### 1. Comprehensive Risk Mitigation (Lines 156-166)
+
+6 risks with **three-column structure**: Impact + Mitigation + Fallback
+
+| Risk | Mitigation | Fallback |
+|------|------------|----------|
+| Participant recruitment fails | Increase incentive $50→$75 | Extend Phase 1 by 2 weeks |
+| Cross-agent compatibility <80% | Document workarounds; lower to 70% | Build MVP for Claude Code only |
+| Hero Workflow TTFW >10 min | Redesign friction; add tutorial | Pivot to developer-only audience |
+
+This exceeds most plans which only have mitigation, not fallback.
+
+### 2. Traceability to Research Instruments (Lines 26-78)
+
+Every research question includes:
+```markdown
+- **See**: `research-questions.md` → RQ1 | `research-instruments.md` → Interview Guide #1
+```
+
+This creates an audit trail from plan → questions → instruments → artifacts.
+
+### 3. Weekly PMF Review Ritual (Lines 413-427)
+
+Matches PMF-Kit constitution requirement exactly:
+- 45-minute cadence
+- 5-section agenda (Metrics, Learnings, Blockers, Decisions, Next Week)
+- Required attendees specified
+- Output defined (dashboard + priorities + decisions)
+
+### 4. Assumptions with Contingency Plans (Lines 451-459)
+
+Full 4-column structure: Assumption | Impact if Invalid | Validation Method | Contingency Plan
+
+This exceeds the spec.md assumptions section which had 3 columns.
+
+---
+
+## Verdict
+
+| Category | Rating |
+|----------|--------|
+| **Research Questions** | ✅ Excellent—9 questions with full traceability |
+| **PDCA Cycles** | ✅ Strong—3 phases with explicit gates |
+| **Constitution Alignment** | ✅ Complete—All 10 principles verified |
+| **Budget & Resources** | ✅ Detailed—$1,500, team allocation, tools |
+| **Risk Mitigation** | ✅ Comprehensive—6 risks with fallbacks |
+| **Optimization Integration** | ✅ Good—Referenced at phase transitions and failure paths |
+| **Multi-Judge Evaluation** | ⚠️ Missing—Synthesis lacks multi-reviewer validation |
+| **A/B Testing Protocol** | ⚠️ Partial—UTM tracking but no messaging optimization |
+
+**Overall**: 9.5/10 — The strongest plan I've evaluated. Correctly positions `/pmfkit.optimize` at failure paths and phase transitions. Minor gaps in specifying the 5-stage pipeline and multi-judge evaluation for synthesis quality.
+
+---
+
+## Recommended Additions
+
+| Priority | Action |
+|----------|--------|
+| **P1** | Add multi-reviewer validation to Phase 1 synthesis tasks |
+| **P2** | Expand `/pmfkit.optimize` references to specify 5-stage pipeline |
+| **P2** | Add A/B test protocol for Phase 3 messaging optimization |
+| **P3** | Add optimization trigger to Weekly PMF Review agenda |
+| **P3** | Add synthesis quality checklist (no hallucination, complete coverage) |
