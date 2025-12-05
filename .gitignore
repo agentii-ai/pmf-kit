@@ -44,3 +44,6 @@ env/
 .genreleases/
 *.zip
 sdd-*/
+
+# Incomplete specs (work in progress)
+specs/003-workflow-optimization/
