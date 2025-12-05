@@ -341,6 +341,43 @@ pmf init contract-ai
 
 ---
 
+## 🚧 Roadmap
+
+### Next Up: `/pmfkit.optimize` - Template Quality Optimization
+
+The next major feature for PMF-Kit is an **automated optimization module** that evaluates and improves template quality using multi-judge LLM evaluation and optimization algorithms.
+
+#### 5-Stage Optimization Pipeline
+
+| Stage | Description | Status |
+|-------|-------------|--------|
+| **EVALUATE** | Multi-judge quality assessment (GPT-4o, Claude, Gemini) with 8-dimensional scoring | 🟡 Planned |
+| **SUGGEST** | Root cause analysis + meta-prompting for improvement recommendations | 🟡 Planned |
+| **IMPROVE** | MIPROv2/TextGrad optimization with few-shot example bootstrapping | 🟡 Planned |
+| **VALIDATE** | *(Optional)* A/B testing with statistical significance validation | 🟡 Planned |
+| **ITERATE** | *(Optional)* Continuous monitoring with auto-reoptimization triggers | 🟡 Planned |
+
+#### Key Features
+
+- **Multi-Judge Consensus**: 3 LLM judges (GPT-4o strict, Claude balanced, Gemini lenient) with Bradley-Terry aggregation
+- **8-Dimensional Rubric**: Correctness, Coherence, Instruction-Following, Completeness, Specificity, Clarity, Actionability, Policy-Adherence
+- **Quantified Improvements**: Target +15-25% quality improvement with statistical significance (p < 0.05)
+- **CLI + Agent Support**: `pmf optimize <target>` and `/pmfkit.optimize` slash command
+
+#### Usage Preview
+
+```bash
+# CLI usage
+pmf optimize .pmf/templates/spec-template.md --mode=full
+
+# Agent command
+/pmfkit.optimize specs/my-feature/spec.md
+```
+
+See [specs/003-workflow-optimization](./specs/003-workflow-optimization/) for full specification and implementation plan.
+
+---
+
 ## 🏗️ Project Structure
 
 ```
@@ -459,3 +496,14 @@ pmf init my-product
 ```
 
 Let's build products customers love, with evidence guiding every decision.
+
+---
+
+## 💬 Contact
+
+For direct communication, connect with me on WeChat:
+
+<div align="center">
+    <img src="./media/wechat.png" alt="WeChat QR Code" width="200"/>
+    <p><strong>WeChat ID:</strong> frank_uwm</p>
+</div>
