@@ -53,6 +53,14 @@ uvx --from git+https://github.com/agentii-ai/pmf-kit.git pmf check
 
 > **Note**: This project is improving rapidly. We recommend `uvx` to always get the latest features and fixes.
 
+<details>
+<summary>📸 See it in action</summary>
+
+![One-time installation with uvx](./media/test1.png)
+*Running `pmf init` shows an interactive wizard to select your AI assistant*
+
+</details>
+
 #### Option 2: Persistent Installation
 
 Install once and use everywhere (may require periodic updates):
@@ -60,6 +68,14 @@ Install once and use everywhere (may require periodic updates):
 ```bash
 uv tool install pmf-cli --from git+https://github.com/agentii-ai/pmf-kit.git
 ```
+
+<details>
+<summary>📸 See installation output</summary>
+
+![Persistent installation with uv tool](./media/test4.png)
+*The `pmf` executable is installed globally for use anywhere*
+
+</details>
 
 Then use the tool directly:
 
@@ -83,6 +99,14 @@ cd my-ai-product
 
 This creates a project with PMF-specific templates, constitution, and agent commands.
 
+<details>
+<summary>📸 See successful initialization</summary>
+
+![Successful PMF project initialization](./media/test2.png)
+*After setup completes, you'll see all available slash commands and next steps*
+
+</details>
+
 ### 3. Launch Your AI Agent
 
 Open your AI assistant (Claude Code, Cursor, Windsurf, etc.) in the project directory. You'll see `/pmfkit.*` commands available:
@@ -95,6 +119,14 @@ Open your AI assistant (Claude Code, Cursor, Windsurf, etc.) in the project dire
 /pmfkit.tasks           # Generate actionable research tasks
 /pmfkit.implement       # Execute PMF discovery workflow
 ```
+
+<details>
+<summary>📸 Claude Code with PMF-Kit commands</summary>
+
+![Claude Code showing PMF-Kit commands](./media/test3.png)
+*Claude Code automatically detects all `/pmfkit.*` slash commands in your project*
+
+</details>
 
 ### 4. Run Your First PMF Discovery Workflow
 
@@ -422,6 +454,22 @@ pmf-kit/
 - [uv](https://docs.astral.sh/uv/) for package management
 - [Python 3.11+](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/downloads)
+
+### Verify Your Setup
+
+Run `pmf check` to verify all prerequisites and see which AI agents are available:
+
+```bash
+pmf check
+```
+
+<details>
+<summary>📸 See check output</summary>
+
+![pmf check command output](./media/test5.png)
+*The `pmf check` command shows all detected tools and AI agents*
+
+</details>
 
 ---
 
